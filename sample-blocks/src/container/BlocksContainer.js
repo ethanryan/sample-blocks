@@ -12,7 +12,10 @@ class BlocksContainer extends Component {
   render() {
     return(
       <div>
-        this is the BlocksContainer.
+        
+        <h1>
+          this is the BlocksContainer.
+        </h1>
 
         <TabBlock />
 
