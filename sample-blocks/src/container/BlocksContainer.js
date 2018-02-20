@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import TabBlock from '../components/TabBlock'
+
 class BlocksContainer extends Component {
   constructor() {
     super()
@@ -11,6 +13,9 @@ class BlocksContainer extends Component {
     return(
       <div>
         this is the BlocksContainer.
+
+        <TabBlock />
+
       </div>
     )
   }
