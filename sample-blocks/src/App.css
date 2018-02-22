@@ -4,6 +4,10 @@
   font-family: Merriweather !important;
 }
 
+.center {
+  text-align: center;
+}
+
 .tab-block {
   border: 1px solid blue;
   margin-left: 18%;
@@ -33,6 +37,12 @@
 .ui.menu .item {
     padding: 1rem 2rem;
     min-width: 23%;
+}
+
+@media (min-width: 30em)
+.ui.menu .item {
+    padding: 1rem 2rem;
+    min-width: 30%;
 }
 
 /* .blocks-tabs__header-item { */

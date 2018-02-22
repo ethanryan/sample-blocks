@@ -13,7 +13,7 @@ class BlocksContainer extends Component {
     return(
       <div>
 
-        <h1>
+        <h1 className="center">
           this is the BlocksContainer.
         </h1>
 
