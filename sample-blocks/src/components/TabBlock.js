@@ -57,51 +57,13 @@ console.log('TabBlock - parsedPanes is::::: ', parsedPanes)
 
 
 const TabBlock = () => (
-  <div>
-    <Icon name='home' />
-
-    <FontAwesomeIcon icon={Icons.faCopyright} size="6x" />
-
-    <FontAwesomeIcon icon={Icons.faCloud} size="6x" />
-
-    <FontAwesomeIcon icon={Icons.faHome} size="6x" />
-
-    <FontAwesomeIcon icon={Icons.faRocket} size="6x" />
-
-    <FontAwesomeIcon icon={Icons.faChevronLeft} size="6x" />
-    <FontAwesomeIcon icon={Icons.faChevronLeft} />
-
-    <FontAwesomeIcon icon={Icons.faChevronRight} size="6x" />
-    <FontAwesomeIcon icon={Icons.faChevronRight} />
-
-
-    <FontAwesome
-      className='super-crazy-colors'
-      name='rocket'
-      size='2x'
-      spin
-      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-    />
-
-    <i class="fa fa-cloud"></i>
-    <div>
-      <i className="fa fa-cloud"></i>
-      this should be a fontawesome cloud...
-    </div>
-
-
   <div className="tab-block">
 
     <h2>Tab Block</h2>
 
-    <i name='home' />
-    <i name='home'> </i>
-    <Icon name='home' />
-    <Icon className='home' />
-    <Icon name='chevron right' />
-    <div>
-      <Icon loading name='spinner' />
-    </div>
+    <FontAwesomeIcon icon={Icons.faChevronLeft} className="chevron-icon" size="4x" />
+
+    <FontAwesomeIcon icon={Icons.faChevronRight} className="chevron-icon chevron-icon__right" size="4x"/>
 
     <div className="blocks-tabs__wrapper">
       <Tab
@@ -111,8 +73,6 @@ const TabBlock = () => (
       />
     </div>
   </div>
-
-</div>
 )
 
 export default TabBlock

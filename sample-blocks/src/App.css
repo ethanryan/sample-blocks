@@ -46,6 +46,17 @@
     display: none;
 }
 
+/* delete this soon, replace with below */
+.chevron-icon {
+  border: 3px solid orange;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+}
+
+.chevron-icon__right {
+  right: 18%;
+}
 
 
 /* arrow on hover over menu */
