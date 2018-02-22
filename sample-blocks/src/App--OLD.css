@@ -1,0 +1,763 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
+
+/* TabBlock */
+
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* font-size: 62.5%; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    font-family: lato,sans-serif;
+    font-size: 1.6em;
+    color: #313537;
+}
+
+div, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+p {
+    display: block;
+    background: #fff;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+* {
+  font-family: Merriweather !important;
+}
+
+
+.block-text {
+    padding: 3rem 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -webkit-transition: padding .5s;
+    transition: padding .5s;
+    font-size: 1.7rem;
+}
+
+.block-text--heading {
+  margin-left: 8.33333%;
+}
+
+
+/* .block-text__col {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 83.33333%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-height: 1px;
+} */
+
+.block-text__container {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 92rem;
+    overflow: hidden;
+}
+
+@media (min-width: 60em)
+.block-text__container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+@media (min-width: 33.75em)
+.block-text__container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.blocks-tabs {
+    padding: 3rem 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    -webkit-transition: padding .5s;
+    transition: padding .5s;
+}
+
+
+.blocks-tabs__container {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 92rem;
+    overflow: hidden;
+}
+
+@media (min-width: 52.5em)
+.blocks-tabs__row {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+@media (min-width: 52.5em)
+.blocks-tabs__row:after, .blocks-tabs__row:before {
+    content: " ";
+    display: table;
+}
+
+@media (min-width: 67.5em)
+.lesson--open .blocks-tabs__col:first-child {
+    margin-left: 8.33333%;
+}
+
+@media (min-width: 60em)
+.lesson--open .blocks-tabs__col:first-child {
+    margin-left: 0;
+}
+
+@media (min-width: 52.5em)
+.lesson--open .blocks-tabs__col:first-child {
+    margin-left: 8.33333%;
+}
+
+@media (min-width: 67.5em)
+.lesson--open .blocks-tabs__col {
+    width: 83.33333%;
+}
+
+@media (min-width: 60em)
+.lesson--open .blocks-tabs__col {
+    width: 100%;
+}
+
+
+
+.blocks-tabs__wrapper {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05);
+    box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05);
+}
+
+.figure-image__image {
+  max-width: 100%;
+  max-height: 38rem;
+}
+
+
+
+.blocks-tabs__content-item--active {
+    display: block;
+    opacity: 1;
+}
+
+.blocks-tabs__content-item--will-enter {
+    display: block;
+    opacity: .01;
+}
+
+.blocks-tabs__content-item {
+    display: none;
+    opacity: 1;
+    padding: 2rem 3rem 3.5rem;
+    background: #fff;
+    -webkit-transition: opacity .6s cubic-bezier(0,0,.3,1);
+    transition: opacity .6s cubic-bezier(0,0,.3,1);
+}
+
+
+
+
+/* extracted css */
+/* extracted css */
+/* extracted css */
+/* extracted css */
+
+#focus-ring-style {
+}
+
+#app {
+}
+
+#innerApp {
+}
+
+#page-wrap {
+}
+
+#no-menu {
+}
+
+#tabsheader {
+}
+
+#option-ZhgdPibCYc9eHkPh1oFhCExP3FH6YE81-20-21 {
+}
+
+#option-ZhgdPibCYc9eHkPh1oFhCExP3FH6YE81-20-22 {
+}
+
+#batBeacon0.5408446600475161 {
+    width: 0px;
+    height: 0px;
+    display: none;
+    visibility: hidden;
+}
+
+#batBeacon0.5818173599395218 {
+    width: 0px;
+    height: 0px;
+    display: none;
+    visibility: hidden;
+}
+
+.vjs-styles-defaults {
+}
+
+.transition-group {
+}
+
+.lesson.lesson--open {
+}
+
+.lesson__sidebar {
+}
+
+.overview-sidebar {
+}
+
+.overview-sidebar__header-wrap.brand--head {
+}
+
+.overview-sidebar__header {
+    background-image: url("https://images.articulate.com/f:jpg,b:fff,w:1680,s:cover,q:65/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/dOnS66X1YMkCMnTA-stock-image.jpg");
+}
+
+.overview__side-panel-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overview-sidebar__info {
+}
+
+.overview-sidebar__title {
+}
+
+.overview-sidebar__progress.brand--ui {
+}
+
+.progress-bar {
+}
+
+.progress-bar__line {
+}
+
+.progress-bar__fill {
+    width: 0%;
+}
+
+.overview-sidebar__container {
+}
+
+.overview-sidebar__content {
+}
+
+.lesson-lists {
+}
+
+.lesson-lists__list {
+}
+
+.lesson-lists__item {
+}
+
+.lesson-link {
+}
+
+.lesson-link__icon {
+}
+
+.i {
+}
+
+.lesson-link__name.brand--ui {
+}
+
+.lesson-link__progress {
+}
+
+.pie-progress {
+}
+
+.pie-progress__pie {
+}
+
+.pie-progress__border {
+}
+
+.pie-progress__progress.brand--stroke.brand--fill-opacity.pie-progress__progress--clear {
+}
+
+.pie-progress__check.icon.icon-Master-05.pie-progress__check--clear {
+}
+
+.lesson-link.lesson-link--visited.lesson-link--active.brand--beforeBackground {
+}
+
+.pie-progress__progress.brand--stroke.brand--fill-opacity {
+}
+
+.pie-progress__check.icon.icon-Master-05 {
+}
+
+.lesson__wrap {
+}
+
+.overview-sidebar__header.overview-sidebar__header--clone {
+    background-image: url("https://images.articulate.com/f:jpg,b:fff,w:1680,s:cover,q:65/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/dOnS66X1YMkCMnTA-stock-image.jpg");
+}
+
+.lesson__content {
+}
+
+.page-view.page-view--visible {
+}
+
+.page {
+}
+
+.previous-lesson.brand--linkColorHover {
+    display: flex;
+}
+
+.previous-lesson__link {
+}
+
+.icon.icon-chevron-up {
+}
+
+.previous-lesson__title.brand--ui {
+}
+
+.page__wrapper {
+}
+
+.page__menu {
+}
+
+.button.button--default.button--menu {
+}
+
+.button__icon.icon-menu {
+}
+
+.page__header {
+}
+
+.page__header-limit {
+}
+
+.page__header-container {
+}
+
+.lesson-header__row {
+}
+
+.lesson-header__main {
+}
+
+.lesson-header {
+}
+
+.lesson-header__top-wrap.brand--afterBackground {
+}
+
+.lesson-header__counter.brand--body.brand--linkColor {
+}
+
+.lesson-header__count {
+}
+
+.lesson-header__title.brand--lhead {
+}
+
+.lesson-header__author.brand--ui {
+}
+
+.lesson-header__description.brand--lbody.brand--linkColor.brand--linkColor {
+}
+
+.fr-view {
+}
+
+.progress-wrap {
+}
+
+.progress {
+}
+
+.progress__container {
+}
+
+.progress__indicator.brand--background {
+    transform: translate3d(50%, 0px, 0px);
+}
+
+.page__content.page__content--appear {
+}
+
+.blocks-lesson {
+}
+
+.block-image.block-image--overlay {
+    padding-top: 0px;
+    padding-bottom: 30px;
+}
+
+.block-image__figure {
+}
+
+.block-image__image {
+    background-image: url("https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/eefAhKtXI_82a9G9.jpg");
+}
+
+.block-image__overlay {
+    opacity: 0.5;
+    background-color: rgb(0, 0, 0);
+}
+
+.block-image__container {
+}
+
+.block-image__row {
+}
+
+.block-image__col {
+}
+
+.block-image__paragraph.brand--head.brand--linkColor.brand--linkColor {
+}
+
+.block-text.block-text--onecol {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block-text__container {
+}
+
+.block-text__row {
+}
+
+.block-text__col.brand--body.brand--linkColor.brand--linkColor {
+}
+
+.block-text.block-text--heading {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block-text__col.brand--head {
+}
+
+.brand--linkColor {
+}
+
+.undefined.brand--linkColor {
+}
+
+.blocks-tabs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.blocks-tabs__container {
+}
+
+.blocks-tabs__row {
+}
+
+.blocks-tabs__col {
+}
+
+.blocks-tabs__wrapper {
+}
+
+.blocks-tabs__header-wrap {
+}
+
+.blocks-tabs__header-item.brand--head.brand--color.blocks-tabs__header-item--active {
+}
+
+.blocks-tabs__header-item.brand--head {
+}
+
+.blocks-tabs__controls.start {
+}
+
+.blocks-tabs__arrow.blocks-tabs__arrow--prev.brand--background.hidden {
+}
+
+.icon.icon-chevron-left {
+}
+
+.blocks-tabs__arrow.blocks-tabs__arrow--next.brand--background {
+}
+
+.icon.icon-chevron-right {
+}
+
+.blocks-tabs__content {
+}
+
+.blocks-tabs__content-item.blocks-tabs__content-item--will-enter.blocks-tabs__content-item--active {
+}
+
+.blocks-tabs__description.brand--body.brand--linkColor.brand--linkColor {
+}
+
+.blocks-tabs__image {
+}
+
+.media-group {
+}
+
+.figure-image {
+}
+
+.figure-image__image {
+    cursor: zoom-in;
+}
+
+.blocks-tabs__content-item {
+}
+
+.block-flashcards.blocks-flashcard--column {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block-flashcards__wrapper {
+}
+
+.block-flashcard.block-flashcard--small {
+}
+
+.block-flashcard__wrapper {
+}
+
+.block-flashcard__front.block-flashcard__front--description {
+}
+
+.block-flashcard__content.brand--border {
+}
+
+.block-flashcard__center.brand--linkColor {
+}
+
+.block-flashcard__description.brand--head.brand--linkColor {
+}
+
+.block-flashcard__flip.brand--ui {
+}
+
+.block-flashcard__back.block-flashcard__back--description {
+}
+
+.block-flashcard__content {
+}
+
+.block-flashcard__back.block-flashcard__back--fullimage {
+    background-image: url("https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/55J-c_DLx5JdTJ_7.jpg");
+}
+
+.block-flashcard__center.brand--linkColor.block-flashcard__center--long.block-flashcard__center--long--back.block-flashcard__center--overflow {
+}
+
+.block-knowledge {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block-knowledge__container {
+}
+
+.block-knowledge__row {
+}
+
+.block-knowledge__col {
+}
+
+.block-knowledge__wrapper {
+}
+
+.quiz-card {
+}
+
+.quiz-card__container {
+}
+
+.quiz-card__row {
+}
+
+.quiz-card__main {
+}
+
+.quiz-card__title.brand--body.brand--linkColor.brand--linkColor {
+}
+
+.quiz-card__media {
+}
+
+.quiz-card__interactive {
+}
+
+.quiz-multiple-choice-option {
+}
+
+.radio-button.quiz-multiple-choice-option__radio-label {
+}
+
+.radio-button__radio.quiz-multiple-choice-option__radio-btn.brand--afterBackground {
+}
+
+.icon.icon-tick {
+}
+
+.icon.icon-close-media-panel {
+}
+
+.radio-button__label {
+}
+
+.brand--head.quiz-multiple-choice-option__label.brand--linkColor {
+}
+
+.quiz-multiple-choice-option__border {
+}
+
+.quiz-card__feedback {
+}
+
+.quiz-card__main--feedback {
+}
+
+.quiz-card__feedback-wrap {
+}
+
+.quiz-card__feedback-icon {
+}
+
+.icon.icon-Master-06 {
+}
+
+.quiz-card__feedback-label.brand--head {
+}
+
+.quiz-card__feedback-text.brand--body.brand--linkColor.brand--linkColor {
+}
+
+.quiz-card__actions {
+}
+
+.quiz-card__submit.brand--ui {
+}
+
+.quiz-card__button.quiz-card__button--disabled {
+}
+
+.block-knowledge__retake-container {
+}
+
+.block-knowledge__retake {
+}
+
+.block-knowledge__retake-content {
+}
+
+.block-knowledge__retake-icon.icon.icon-reload {
+}
+
+.block-knowledge__retake-text.brand--ui {
+}
+
+.block-impact.block-impact--b {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block-impact__wrap {
+}
+
+.block-impact__container {
+}
+
+.block-impact__row {
+}
+
+.block-impact__col {
+}
+
+.block-impact__note-background.brand--background {
+}
+
+.block-impact__note-icon.brand--color {
+}
+
+.icon.icon-info {
+}
+
+.block-impact__quote.brand--linkColor.brand--head.brand--beforeBackground.brand--linkColor {
+}
+
+.lesson-progress-wrapper.lesson-progress-wrapper--visible.lesson--open {
+}

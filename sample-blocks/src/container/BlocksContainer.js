@@ -12,7 +12,7 @@ class BlocksContainer extends Component {
   render() {
     return(
       <div>
-        
+
         <h1>
           this is the BlocksContainer.
         </h1>
