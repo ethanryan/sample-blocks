@@ -51,9 +51,16 @@ const parsedPanes = jsonArray.map( (object, index) => {
   // console.log('TabBlock - newObject is: ', newObject)
   return newObject
 })
+// console.log('TabBlock - jsonArray is::::: ', jsonArray)
+// console.log('TabBlock - parsedPanes is::::: ', parsedPanes)
 
-console.log('TabBlock - jsonArray is::::: ', jsonArray)
-console.log('TabBlock - parsedPanes is::::: ', parsedPanes)
+function clickedLeftChevron() {
+  console.log('left chevron clicked...')
+}
+
+function clickedRightChevron() {
+  console.log('right chevron clicked...')
+}
 
 
 const TabBlock = () => (
@@ -61,9 +68,9 @@ const TabBlock = () => (
 
     <h2>Tab Block</h2>
 
-    <FontAwesomeIcon icon={Icons.faChevronLeft} className="chevron-icon" size="4x" />
+    <FontAwesomeIcon icon={Icons.faChevronLeft} onClick={() => clickedLeftChevron()} className="chevron-icon" size="4x" />
 
-    <FontAwesomeIcon icon={Icons.faChevronRight} className="chevron-icon chevron-icon__right" size="4x"/>
+    <FontAwesomeIcon icon={Icons.faChevronRight} onClick={() => clickedRightChevron()} className="chevron-icon chevron-icon__right" size="4x"/>
 
     <div className="blocks-tabs__wrapper">
       <Tab
