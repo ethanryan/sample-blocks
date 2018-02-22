@@ -1,6 +1,12 @@
 import React from 'react'
 
-import { Tab } from 'semantic-ui-react'
+import FontAwesomeIcon from "@fortawesome/react-fontawesome"
+import * as Icons from "@fortawesome/fontawesome-free-solid"
+
+import { Tab, Icon } from 'semantic-ui-react'
+
+var FontAwesome = require('react-fontawesome');
+
 
 var Parser = require('html-react-parser')
 
@@ -51,17 +57,62 @@ console.log('TabBlock - parsedPanes is::::: ', parsedPanes)
 
 
 const TabBlock = () => (
+  <div>
+    <Icon name='home' />
+
+    <FontAwesomeIcon icon={Icons.faCopyright} size="6x" />
+
+    <FontAwesomeIcon icon={Icons.faCloud} size="6x" />
+
+    <FontAwesomeIcon icon={Icons.faHome} size="6x" />
+
+    <FontAwesomeIcon icon={Icons.faRocket} size="6x" />
+
+    <FontAwesomeIcon icon={Icons.faChevronLeft} size="6x" />
+    <FontAwesomeIcon icon={Icons.faChevronLeft} />
+
+    <FontAwesomeIcon icon={Icons.faChevronRight} size="6x" />
+    <FontAwesomeIcon icon={Icons.faChevronRight} />
+
+
+    <FontAwesome
+      className='super-crazy-colors'
+      name='rocket'
+      size='2x'
+      spin
+      style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+    />
+
+    <i class="fa fa-cloud"></i>
+    <div>
+      <i className="fa fa-cloud"></i>
+      this should be a fontawesome cloud...
+    </div>
+
+
   <div className="tab-block">
-  {/* <div> */}
+
     <h2>Tab Block</h2>
 
-    {/* <div className="blocks-tabs__wrapper"> */}
+    <i name='home' />
+    <i name='home'> </i>
+    <Icon name='home' />
+    <Icon className='home' />
+    <Icon name='chevron right' />
     <div>
+      <Icon loading name='spinner' />
+    </div>
+
+    <div className="blocks-tabs__wrapper">
       <Tab
         menu={{attached: true, tabular: false}}
-        panes={parsedPanes} renderActiveOnly={false} />
+        panes={parsedPanes}
+        renderActiveOnly={false}
+      />
     </div>
   </div>
+
+</div>
 )
 
 export default TabBlock

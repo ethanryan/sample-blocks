@@ -25,7 +25,57 @@
 
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
+  border-bottom: 3px solid green;
+
+  /* --- code below found online, on benfrain.com ---  */
+  /* Make this scrollable when needed */
+  overflow-x: auto;
+  /* We don't want vertical scrolling */
+  overflow-y: hidden;
+  /* For WebKit implementations, provide inertia scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* We don't want internal inline elements to wrap */
+  white-space: nowrap;
+  /* Make an auto-hiding scroller for the 3 people using a IE */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* hidind default scrollbar created by above */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* arrow on hover over menu */
+.blocks-tabs__arrow {
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    top: .9rem;
+    bottom: .9rem;
+    padding: 1rem;
+    min-width: 4.4rem;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-border-radius: .3rem;
+    border-radius: .3rem;
+    background: #50abf1;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    z-index: 1;
 }
 
 /* add all this stuff for different size screens:::: */
@@ -65,7 +115,9 @@
     flex: 0 1 100%;
     min-width: 40%;
     padding: 1rem .5rem;
-    height: 8rem;
+    /* height: 8rem; */
+    /* ~~~~~~~~~~~~~~~~~~~ note ---- taking out height above for now, will put back later..... */
+    /* border: 1px solid red; */
     border: none;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -89,7 +141,6 @@
 .ui.menu .active.item {
     background: #fff!important;
     /* background: green; */
-    /* border-bottom: 5px dotted green; */
     border-bottom: 1px solid white;
     cursor: default;
 }
