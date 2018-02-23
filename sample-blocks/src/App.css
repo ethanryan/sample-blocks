@@ -25,8 +25,8 @@
 
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
-  /* border-bottom: 1px solid white; */
-  border-bottom: 3px solid green;
+  border-bottom: 1px solid white;
+  /* border-bottom: 3px solid green; */
 
   /* --- code below found online, on benfrain.com ---  */
   /* Make this scrollable when needed */
@@ -41,9 +41,12 @@
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-/* hidind default scrollbar created by above */
+/* hiding default scrollbar created by above */
 ::-webkit-scrollbar {
     display: none;
+    /* removes element from page and takes up no space */
+    /* visibility: hidden;  */
+    /* hides element by still takes up space  */
 }
 
 /* delete this soon, replace with below */
@@ -55,7 +58,7 @@
 }
 
 .chevron-icon__right {
-  right: 18%;
+  right: 18%; /* 18% is the margin-right of .tab-block */
 }
 
 
