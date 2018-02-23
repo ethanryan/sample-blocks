@@ -69,25 +69,20 @@ function getChevrons() {
 function clickedLeftChevron() {
   // console.log('left chevron clicked...')
   var items = getMenuItems()
-  // console.log('items is:', items)
   var firstItem = items[0]
-  // console.log('firstItem is: ', firstItem)
   firstItem.scrollIntoView({behavior: "smooth"})
 }
 
 function clickedRightChevron() {
   // console.log('right chevron clicked...')
   var items = getMenuItems()
-  // console.log('items is:', items)
   var lastItem = items[items.length - 1]
-  // console.log('lastItem is: ', lastItem)
   lastItem.scrollIntoView({behavior: "smooth"})
 }
 
 
 function showChevrons() { //condiitonally show chevrons, based on where the mouse is in the menu scroll...
   console.log('check to see if we should showChevrons...')
-  // element.scrollLeft
   var items = getMenuItems()
   var chevrons = getChevrons()
   //show both chevrons on mouseover of menu items...
@@ -97,7 +92,6 @@ function showChevrons() { //condiitonally show chevrons, based on where the mous
     })
   }
   //show chevrons when chevrons are hovered over as well...
-  //var chevrons = document.getElementsByClassName("chevron-icon")
   for (var j = 0; j < chevrons.length; j++) {
     chevrons[j].addEventListener("mouseover", function() {
         showBothChevrons()
@@ -108,6 +102,7 @@ function showChevrons() { //condiitonally show chevrons, based on where the mous
 
 function hideChevrons() {
   console.log('no longer hovering over blocks-tabs__wrapper div, so hideChevrons called...')
+  //hideBothChevrons() //can i just call this???
   var items = getMenuItems()
   for (var i = 0; i < items.length; i++) {
     items[i].addEventListener("mouseleave", function() { //mouseover or mouseleave????
@@ -129,7 +124,7 @@ function showChevronLeft() {
   var firstItem = items[0]
   var firstItemPosition = firstItem.getBoundingClientRect()
   console.log('firstItemPosition.x is: ', firstItemPosition.x)
-  if (firstItemPosition.x > 204) {
+  if (firstItemPosition.x > 204) { //do this by 18% instead of pixels??? pixels will change with resizing window...
     hideChevronLeft()
   } else {
     chevrons[0].classList.remove("hidden")
