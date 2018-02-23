@@ -123,7 +123,7 @@ function hideIt() {
   chevrons[0].classList.add("hidden")
   chevrons[1].classList.add("hidden")
 }
-//hideIt()
+
 
 
 const TabBlock = () => (
