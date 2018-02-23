@@ -24,6 +24,7 @@ const jsonArray = [
   { menuItem: "Love The Work", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work. <br><br><Image className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/kcA21C-HvSKNkEmO.png' fluid />", },
   { menuItem: "Have Fun", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.", },
   { menuItem: " ", pane: " ", },
+
   // { menuItem: "Tab 4", pane: "Tab 4 Content is right here mofooooo", image: "https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif" },
 ]
 
@@ -32,6 +33,7 @@ const parsedPanes = jsonArray.map( (object, index) => {
   // console.log('TabBlock - object is: ', index, object)
   var newObject = Object.assign({}, object) //cloning each object into a newObject
   // newObject.key = index
+  newObject.menuItem = object.menuItem
   newObject.pane = Parser(object.pane) //second key value is parsed
   newObject.id = index //giving each object an id...
   newObject.key = index //giving each object a key...
@@ -52,22 +54,25 @@ const parsedPanes = jsonArray.map( (object, index) => {
   return newObject
 })
 // console.log('TabBlock - jsonArray is::::: ', jsonArray)
-// console.log('TabBlock - parsedPanes is::::: ', parsedPanes)
+console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
 
+function getItems() {
+  var items = document.getElementsByClassName("item")
+  return items
+}
 
 function clickedLeftChevron() {
   // console.log('left chevron clicked...')
-  var items = document.getElementsByClassName("item")
+  var items = getItems()
   // console.log('items is:', items)
   var firstItem = items[0]
   // console.log('firstItem is: ', firstItem)
   firstItem.scrollIntoView({behavior: "smooth"})
 }
 
-
 function clickedRightChevron() {
   // console.log('right chevron clicked...')
-  var items = document.getElementsByClassName("item")
+  var items = getItems()
   // console.log('items is:', items)
   var lastItem = items[items.length - 1]
   // console.log('lastItem is: ', lastItem)
@@ -75,24 +80,100 @@ function clickedRightChevron() {
 }
 
 
+function hideChevrons() {
+  console.log('hideChevrons called...')
+  var items = getItems()
+  for (var i = 0; i < items.length; i++) {
+    items[i].addEventListener("mouseover", function() {
+        hideIt()
+    })
+  }
+}
+
+
+function hideIt() {
+  console.log('hideIt called...!!!!!')
+}
+
+
 const TabBlock = () => (
 
+  <div>
   <div className="tab-block">
 
     <h2>Tab Block</h2>
 
-    <FontAwesomeIcon icon={Icons.faChevronLeft} onClick={() => clickedLeftChevron()} className="chevron-icon" size="4x" />
+    <FontAwesomeIcon
+      icon={Icons.faChevronLeft}
+      onClick={() => clickedLeftChevron()}
+      className="chevron-icon"
+      size="4x"
+    />
 
-    <FontAwesomeIcon icon={Icons.faChevronRight} onClick={() => clickedRightChevron()} className="chevron-icon chevron-icon__right" size="4x"/>
+    <FontAwesomeIcon
+      icon={Icons.faChevronRight}
+      onClick={() => clickedRightChevron()}
+      className="chevron-icon chevron-icon__right"
+      size="4x"
+    />
+
+    {/* <ReactComponent
+        onMouseEnter={this.someHandler}
+        onMouseLeave={this.someOtherHandler}
+    /> */}
+
+    {/* <ul>
+        {this.state.letters.map(letter =>
+          <li key={letter} data-letter={letter} onClick={this.handleClick}>
+            {letter}
+          </li>
+        )}
+      </ul> */}
 
     <div className="blocks-tabs__wrapper">
       <Tab
         menu={{attached: true, tabular: false}}
         panes={parsedPanes}
         renderActiveOnly={false}
+        onMouseEnter={() => hideChevrons()}
       />
-
     </div>
+
+  </div>
+
+
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+
+
+  {/* <div>
+      <div className="tab-block">
+
+      <div className="blocks-tabs__wrapper">
+        <Tab>
+        {parsedPanes.map(object =>
+          <div>
+
+        <div key={object}>
+          {object.menuItem}>
+        </div>
+        <div>
+          {object.pane.map(eachPane =>
+          <div key={eachPane}>
+            {eachPane}
+          </div>
+          )}
+        </div>
+
+      </div>
+      )}
+      </Tab>
+      </div>
+      </div>
+    </div> */}
+
   </div>
 )
 
