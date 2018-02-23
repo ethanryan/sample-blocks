@@ -8,11 +8,21 @@
   text-align: center;
 }
 
+/* call this .hidden, same as they called it.... */
+.hidden {
+  /* display: none !important; */
+  /* visibility: hidden !important; */
+  opacity: 0;
+  pointer-events: none;
+}
+
 .tab-block {
+  /* opacity: .99; */
   border: 1px solid blue;
   margin-left: 18%;
   margin-right: 18%;
 }
+
 
 .blocks-tabs__wrapper {
   border: 1px solid #ddd;
@@ -24,13 +34,14 @@
   box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05);
 }
 
+
+
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
   border-bottom: 1px solid white;
   /* border-bottom: 3px solid green; */
   /* border: 1px solid yellow; */
-
-
+  position: relative;
   /* --- code below found online, on benfrain.com ---  */
   /* Make this scrollable when needed */
   overflow-x: auto;
@@ -57,7 +68,22 @@
   border: 3px solid orange;
   position: absolute;
   display: flex;
-  z-index: 1;
+  z-index: 666;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-border-radius: .3rem;
+  border-radius: .3rem;
+  background: #50abf1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.chevron-icon:hover {
+  opacity: 1;
+}
+
+.chevron-icon:not(.hidden) {
+  opacity: 1;
 }
 
 .chevron-icon__right {
@@ -93,6 +119,10 @@
     -webkit-transition: opacity .3s;
     transition: opacity .3s;
     z-index: 1;
+}
+
+.blocks-tabs__arrow:not(.hidden) {
+  opacity: 1;
 }
 
 /* add all this stuff for different size screens:::: */

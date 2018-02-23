@@ -56,14 +56,14 @@ const parsedPanes = jsonArray.map( (object, index) => {
 // console.log('TabBlock - jsonArray is::::: ', jsonArray)
 console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
 
-function getItems() {
+function getMenuItems() {
   var items = document.getElementsByClassName("item")
   return items
 }
 
 function clickedLeftChevron() {
   // console.log('left chevron clicked...')
-  var items = getItems()
+  var items = getMenuItems()
   // console.log('items is:', items)
   var firstItem = items[0]
   // console.log('firstItem is: ', firstItem)
@@ -72,7 +72,7 @@ function clickedLeftChevron() {
 
 function clickedRightChevron() {
   // console.log('right chevron clicked...')
-  var items = getItems()
+  var items = getMenuItems()
   // console.log('items is:', items)
   var lastItem = items[items.length - 1]
   // console.log('lastItem is: ', lastItem)
@@ -80,99 +80,83 @@ function clickedRightChevron() {
 }
 
 
-function hideChevrons() {
-  console.log('hideChevrons called...')
-  var items = getItems()
+function showChevrons() { //condiitonally show chevrons, based on where the mouse is in the menu scroll...
+  console.log('check to see if we should showChevrons...')
+  var items = getMenuItems()
   for (var i = 0; i < items.length; i++) {
     items[i].addEventListener("mouseover", function() {
+        showIt()
+    })
+  }
+  //show chevrons when chevrons are hovered over as well...
+  var chevrons = document.getElementsByClassName("chevron-icon")
+  for (var i = 0; i < chevrons.length; i++) {
+    chevrons[i].addEventListener("mouseover", function() {
+        showIt()
+    })
+  }
+}
+
+
+function hideChevrons() {
+  console.log('no longer hovering over blocks-tabs__wrapper div, so hideChevrons called...')
+  var items = getMenuItems()
+  for (var i = 0; i < items.length; i++) {
+    items[i].addEventListener("mouseleave", function() { //mouseover or mouseleave????
         hideIt()
     })
   }
 }
 
 
+function showIt() {
+  console.log('showIt called...!!!!!')
+  var chevrons = document.getElementsByClassName("chevron-icon")
+  chevrons[0].classList.remove("hidden")
+  chevrons[1].classList.remove("hidden")
+}
+
+
 function hideIt() {
   console.log('hideIt called...!!!!!')
+  var chevrons = document.getElementsByClassName("chevron-icon")
+  chevrons[0].classList.add("hidden")
+  chevrons[1].classList.add("hidden")
 }
+//hideIt()
 
 
 const TabBlock = () => (
 
-  <div>
   <div className="tab-block">
 
     <h2>Tab Block</h2>
 
-    <FontAwesomeIcon
-      icon={Icons.faChevronLeft}
-      onClick={() => clickedLeftChevron()}
-      className="chevron-icon"
-      size="4x"
-    />
-
-    <FontAwesomeIcon
-      icon={Icons.faChevronRight}
-      onClick={() => clickedRightChevron()}
-      className="chevron-icon chevron-icon__right"
-      size="4x"
-    />
-
-    {/* <ReactComponent
-        onMouseEnter={this.someHandler}
-        onMouseLeave={this.someOtherHandler}
-    /> */}
-
-    {/* <ul>
-        {this.state.letters.map(letter =>
-          <li key={letter} data-letter={letter} onClick={this.handleClick}>
-            {letter}
-          </li>
-        )}
-      </ul> */}
-
     <div className="blocks-tabs__wrapper">
+      <FontAwesomeIcon
+        icon={Icons.faChevronLeft}
+        // onMouseEnter={() => showIt()}
+        onClick={() => clickedLeftChevron()}
+        className="chevron-icon hidden"
+        size="4x"
+      />
+
+      <FontAwesomeIcon
+        icon={Icons.faChevronRight}
+        // onMouseEnter={() => showIt()}
+        onClick={() => clickedRightChevron()}
+        className="chevron-icon hidden chevron-icon__right"
+        size="4x"
+      />
+
       <Tab
         menu={{attached: true, tabular: false}}
         panes={parsedPanes}
         renderActiveOnly={false}
-        onMouseEnter={() => hideChevrons()}
+        onMouseEnter={() => showChevrons()}
+        onMouseLeave={() => hideChevrons()}
       />
     </div>
-
-  </div>
-
-
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
-
-
-  {/* <div>
-      <div className="tab-block">
-
-      <div className="blocks-tabs__wrapper">
-        <Tab>
-        {parsedPanes.map(object =>
-          <div>
-
-        <div key={object}>
-          {object.menuItem}>
-        </div>
-        <div>
-          {object.pane.map(eachPane =>
-          <div key={eachPane}>
-            {eachPane}
-          </div>
-          )}
-        </div>
-
-      </div>
-      )}
-      </Tab>
-      </div>
-      </div>
-    </div> */}
 
   </div>
 )
