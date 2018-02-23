@@ -61,6 +61,11 @@ function getMenuItems() {
   return items
 }
 
+function getChevrons() {
+  var chevrons = document.getElementsByClassName("chevron-icon")
+  return chevrons
+}
+
 function clickedLeftChevron() {
   // console.log('left chevron clicked...')
   var items = getMenuItems()
@@ -82,17 +87,20 @@ function clickedRightChevron() {
 
 function showChevrons() { //condiitonally show chevrons, based on where the mouse is in the menu scroll...
   console.log('check to see if we should showChevrons...')
+  // element.scrollLeft
   var items = getMenuItems()
+  var chevrons = getChevrons()
+  //show both chevrons on mouseover of menu items...
   for (var i = 0; i < items.length; i++) {
     items[i].addEventListener("mouseover", function() {
-        showIt()
+      showBothChevrons()
     })
   }
   //show chevrons when chevrons are hovered over as well...
-  var chevrons = document.getElementsByClassName("chevron-icon")
-  for (var i = 0; i < chevrons.length; i++) {
-    chevrons[i].addEventListener("mouseover", function() {
-        showIt()
+  //var chevrons = document.getElementsByClassName("chevron-icon")
+  for (var j = 0; j < chevrons.length; j++) {
+    chevrons[j].addEventListener("mouseover", function() {
+        showBothChevrons()
     })
   }
 }
@@ -103,24 +111,58 @@ function hideChevrons() {
   var items = getMenuItems()
   for (var i = 0; i < items.length; i++) {
     items[i].addEventListener("mouseleave", function() { //mouseover or mouseleave????
-        hideIt()
+        hideBothChevrons()
     })
   }
 }
 
 
-function showIt() {
-  console.log('showIt called...!!!!!')
-  var chevrons = document.getElementsByClassName("chevron-icon")
-  chevrons[0].classList.remove("hidden")
-  chevrons[1].classList.remove("hidden")
+function showBothChevrons() {
+  console.log('showBothChevrons called...!!!!!')
+  showChevronLeft()
+  showChevronRight()
+}
+
+function showChevronLeft() {
+  var chevrons = getChevrons()
+  var items = getMenuItems()
+  var firstItem = items[0]
+  var firstItemPosition = firstItem.getBoundingClientRect()
+  console.log('firstItemPosition.x is: ', firstItemPosition.x)
+  if (firstItemPosition.x > 204) {
+    hideChevronLeft()
+  } else {
+    chevrons[0].classList.remove("hidden")
+  }
+}
+
+function showChevronRight() {
+  var chevrons = getChevrons()
+  var items = getMenuItems()
+  var lastItem = items[items.length - 1]
+  var lastItemPosition = lastItem.getBoundingClientRect()
+  console.log('lastItemPosition.x is: ', lastItemPosition.x)
+  if (lastItemPosition.x < 635) {
+    hideChevronRight()
+  } else {
+    chevrons[1].classList.remove("hidden")
+  }
 }
 
 
-function hideIt() {
-  console.log('hideIt called...!!!!!')
-  var chevrons = document.getElementsByClassName("chevron-icon")
+function hideBothChevrons() {
+  console.log('hideBothChevrons called...!!!!!')
+  hideChevronLeft()
+  hideChevronRight()
+}
+
+function hideChevronLeft() {
+  var chevrons = getChevrons()
   chevrons[0].classList.add("hidden")
+}
+
+function hideChevronRight() {
+  var chevrons = getChevrons()
   chevrons[1].classList.add("hidden")
 }
 
@@ -135,7 +177,6 @@ const TabBlock = () => (
     <div className="blocks-tabs__wrapper">
       <FontAwesomeIcon
         icon={Icons.faChevronLeft}
-        // onMouseEnter={() => showIt()}
         onClick={() => clickedLeftChevron()}
         className="chevron-icon hidden"
         size="4x"
@@ -143,7 +184,6 @@ const TabBlock = () => (
 
       <FontAwesomeIcon
         icon={Icons.faChevronRight}
-        // onMouseEnter={() => showIt()}
         onClick={() => clickedRightChevron()}
         className="chevron-icon hidden chevron-icon__right"
         size="4x"
