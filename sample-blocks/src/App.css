@@ -1,11 +1,25 @@
 /* TabBlock */
 
+/* body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: lato,sans-serif;
+  font-size: 1.6em;
+  color: #313537;
+} */
+
 * {
   font-family: Merriweather !important;
 }
 
 .center {
   text-align: center;
+}
+
+.brand--head {
+  font-family: Lato !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* call this .hidden, same as they called it.... */
@@ -18,14 +32,14 @@
 
 .tab-block {
   /* opacity: .99; */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-left: 18%;
   margin-right: 18%;
 }
 
 
 .blocks-tabs__wrapper {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   /* border: 1px solid red; */
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -57,10 +71,10 @@
 
 /* hiding default scrollbar created by above */
 ::-webkit-scrollbar {
-    display: none;
-    /* removes element from page and takes up no space */
-    /* visibility: hidden;  */
-    /* hides element by still takes up space  */
+  display: none;
+  /* removes element from page and takes up no space */
+  /* visibility: hidden;  */
+  /* hides element by still takes up space  */
 }
 
 /* delete this soon, replace with below */
@@ -92,38 +106,38 @@
 
 
 /* arrow on hover over menu */
-.blocks-tabs__arrow {
-    position: absolute;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    top: .9rem;
-    bottom: .9rem;
-    padding: 1rem;
-    min-width: 4.4rem;
-    color: #fff;
-    cursor: pointer;
-    opacity: 0;
-    -webkit-border-radius: .3rem;
-    border-radius: .3rem;
-    background: #50abf1;
-    -webkit-transition: opacity .3s;
-    transition: opacity .3s;
-    z-index: 1;
-}
+/* .blocks-tabs__arrow {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  top: .9rem;
+  bottom: .9rem;
+  padding: 1rem;
+  min-width: 4.4rem;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-border-radius: .3rem;
+  border-radius: .3rem;
+  background: #50abf1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  z-index: 1;
+} */
 
-.blocks-tabs__arrow:not(.hidden) {
+/* .blocks-tabs__arrow:not(.hidden) {
   opacity: 1;
-}
+} */
 
 /* add all this stuff for different size screens:::: */
 /* add all this stuff for different size screens:::: */
@@ -132,96 +146,104 @@
 @media (min-width: 45em)
 /* .blocks-tabs__header-item { */
 .ui.menu .item {
-    padding: 1rem 2rem;
-    min-width: 23%;
+  padding: 1rem 2rem;
+  min-width: 23%;
 }
 
 @media (min-width: 30em)
 .ui.menu .item {
-    padding: 1rem 2rem;
-    min-width: 30%;
+  padding: 1rem 2rem;
+  min-width: 30%;
 }
 
 /* .blocks-tabs__header-item { */
 .ui.menu .item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 100%;
-    -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
-    min-width: 40%;
-    padding: 1rem .5rem;
-    /* height: 8rem; */
-    /* ~~~~~~~~~~~~~~~~~~~ note ---- taking out height above for now, will put back later..... */
-    /* border: 1px solid red; */
-    border: none;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    background: #f5f5f5;
-    color: #313537;
-    text-transform: uppercase;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2rem;
-    line-height: 1.66667;
-    font-weight: 700;
-    letter-spacing: .12em;
-    word-break: break-word;
-    text-overflow: ellipsis;
-    -webkit-transition: background .3s,border .3s;
-    transition: background .3s,border .3s;
-    outline-offset: -.3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  min-width: 40%;
+  padding: 1rem .5rem;
+  /* height: 8rem; */
+  /* ~~~~~~~~~~~~~~~~~~~ note ---- taking out height above for now, will put back later..... */
+  /* border: 1px solid red; */
+  border: none;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: #f5f5f5;
+  color: #313537;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1.66667;
+  font-weight: 700;
+  letter-spacing: .12em;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  -webkit-transition: background .3s,border .3s;
+  transition: background .3s,border .3s;
+  outline-offset: -.3rem;
 }
 
 /* .blocks-tabs__header-item--active { */
 .ui.menu .active.item {
-    background: #fff!important;
-    /* background: green; */
-    border-bottom: 1px solid white;
-    cursor: default;
+  background: #fff!important;
+  /* background: green; */
+  border-bottom: 1px solid white;
+  cursor: default!important;
+}
+
+.ui.segment {
+  padding-top: 20px;
+  padding-bottom: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /* using same class name for images */
 .figure-image__image {
-    max-width: 100%;
-    max-height: 38rem;
+  max-width: 100%;
+  max-height: 38rem;
+  cursor: zoom-in;
 }
 
 
 
 
 /* div.ui.attached.menu:not(.tabular):hover {
-  color: orange;
-  background-color: black!important;
+color: orange;
+background-color: black!important;
 }
 
 #abc {
-  color: orange!important;
-  background-color: black!important;
+color: orange!important;
+background-color: black!important;
 }
 
 .xxx {
-  color: orange!important;
-  background-color: black!important;
+color: orange!important;
+background-color: black!important;
 }
 
 .tab-block:hover {
-  color: orange;
-  background-color: black;
+color: orange;
+background-color: black;
 }
 
 .segment:hover {
-  color: orange;
-  background-color: black;
+color: orange;
+background-color: black;
 } */

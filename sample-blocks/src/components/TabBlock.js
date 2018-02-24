@@ -3,7 +3,7 @@ import React from 'react'
 import FontAwesomeIcon from "@fortawesome/react-fontawesome"
 import * as Icons from "@fortawesome/fontawesome-free-solid"
 
-import { Tab } from 'semantic-ui-react'
+import { Tab, Modal } from 'semantic-ui-react'
 
 var Parser = require('html-react-parser')
 
@@ -71,6 +71,7 @@ function clickedLeftChevron() {
   var items = getMenuItems()
   var firstItem = items[0]
   firstItem.scrollIntoView({behavior: "smooth"})
+  hideChevronLeft()
 }
 
 function clickedRightChevron() {
@@ -78,6 +79,7 @@ function clickedRightChevron() {
   var items = getMenuItems()
   var lastItem = items[items.length - 1]
   lastItem.scrollIntoView({behavior: "smooth"})
+  hideChevronRight()
 }
 
 
@@ -123,6 +125,7 @@ function showChevronLeft() {
   var items = getMenuItems()
   var firstItem = items[0]
   var firstItemPosition = firstItem.getBoundingClientRect()
+  console.log('------firstItemPosition is: ', firstItemPosition)
   console.log('firstItemPosition.x is: ', firstItemPosition.x)
   if (firstItemPosition.x > 204) { //do this by 18% instead of pixels??? pixels will change with resizing window...
     hideChevronLeft()
@@ -163,11 +166,32 @@ function hideChevronRight() {
 
 
 
+
+// componentDidMount() {
+//   window.addEventListener('scroll', this.handleScroll);
+// }
+
+// function handleScroll() {
+//   // var el = document.getElementById('story_body');
+//   var menu = document.getElementsByClassName('menu');
+//   console.log('menu is::', menu)
+//
+//   var minPixel = menu.offsetTop;
+//   var maxPixel = minPixel + menu.scrollHeight;
+//   var value = document.body.scrollTop;
+//
+//   // respect bounds of element
+//   var percent = (value - minPixel)/(maxPixel - minPixel);
+//   percent = Math.min(1,Math.max(percent, 0))*100;
+// }
+
+
+
 const TabBlock = () => (
 
   <div className="tab-block">
 
-    <h2>Tab Block</h2>
+    <h2 className="brand--head">Tab Block</h2>
 
     <div className="blocks-tabs__wrapper">
       <FontAwesomeIcon
