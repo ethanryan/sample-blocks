@@ -1,15 +1,23 @@
 /* TabBlock */
 
-/* body {
+body {
   margin: 0;
   line-height: 1.5;
   font-family: lato,sans-serif;
   font-size: 1.6em;
   color: #313537;
-} */
+}
 
 * {
   font-family: Merriweather !important;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }
 
 .center {
@@ -35,11 +43,12 @@
   /* border: 1px solid blue; */
   margin-left: 18%;
   margin-right: 18%;
+  margin-bottom: 18%;
 }
 
 
 .blocks-tabs__wrapper {
-  /* border: 1px solid #ddd; */
+  border: 1px solid #ddd;
   /* border: 1px solid red; */
   overflow: hidden;
   -webkit-box-sizing: border-box;
@@ -105,56 +114,24 @@
 }
 
 
-/* arrow on hover over menu */
-/* .blocks-tabs__arrow {
-  position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  top: .9rem;
-  bottom: .9rem;
-  padding: 1rem;
-  min-width: 4.4rem;
-  color: #fff;
-  cursor: pointer;
-  opacity: 0;
-  -webkit-border-radius: .3rem;
-  border-radius: .3rem;
-  background: #50abf1;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-  z-index: 1;
-} */
-
-/* .blocks-tabs__arrow:not(.hidden) {
-  opacity: 1;
-} */
 
 /* add all this stuff for different size screens:::: */
 /* add all this stuff for different size screens:::: */
 /* add all this stuff for different size screens:::: */
 /* add all this stuff for different size screens:::: */
-@media (min-width: 45em)
+
+/* @media (min-width: 45em) */
 /* .blocks-tabs__header-item { */
-.ui.menu .item {
-  padding: 1rem 2rem;
-  min-width: 23%;
-}
+/* .ui.menu .item {
+padding: 1rem 2rem;
+min-width: 23%;
+} */
 
-@media (min-width: 30em)
+/* @media (min-width: 30em)
 .ui.menu .item {
-  padding: 1rem 2rem;
-  min-width: 30%;
-}
+padding: 1rem 2rem;
+min-width: 30%;
+} */
 
 /* .blocks-tabs__header-item { */
 .ui.menu .item {
@@ -176,7 +153,7 @@
   flex: 0 1 100%;
   min-width: 40%;
   padding: 1rem .5rem;
-  /* height: 8rem; */
+  height: 8rem;
   /* ~~~~~~~~~~~~~~~~~~~ note ---- taking out height above for now, will put back later..... */
   /* border: 1px solid red; */
   border: none;
@@ -220,7 +197,9 @@
   cursor: zoom-in;
 }
 
-
+.ui.attached.segment {
+  border-bottom: none;
+}
 
 
 /* div.ui.attached.menu:not(.tabular):hover {

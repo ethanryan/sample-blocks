@@ -14,7 +14,7 @@ class BlocksContainer extends Component {
       <div>
 
         <h1 className="center">
-          this is the BlocksContainer.
+          {/* This is the BlocksContainer. */}
         </h1>
 
         <TabBlock />
