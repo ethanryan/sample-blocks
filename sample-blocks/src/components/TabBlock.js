@@ -3,7 +3,7 @@ import React from 'react'
 import FontAwesomeIcon from "@fortawesome/react-fontawesome"
 import * as Icons from "@fortawesome/fontawesome-free-solid"
 
-import { Tab, Modal } from 'semantic-ui-react'
+import { Tab, Image, Modal, Button } from 'semantic-ui-react'
 
 var Parser = require('html-react-parser')
 
@@ -65,6 +65,11 @@ function getMenuItems() {
 function getChevrons() {
   var chevrons = document.getElementsByClassName("chevron-icon")
   return chevrons
+}
+
+function getImages() {
+  var images = document.getElementsByTagName("img")
+  return images
 }
 
 function clickedLeftChevron() {
@@ -167,6 +172,65 @@ function hideChevronRight() {
 
 
 
+// function toggleImageClassName() {
+//   console.log('in TabBlock, props are::::', this.props)
+//   console.log('check to see if we should toggleImageClassName...')
+//   var images = getImages() //an array of our images
+//   console.log('images are: ', images)
+//   for (var i = 0; i < images.length; i++) {
+//     images[i].addEventListener('click', function() {
+//       console.log('image clicked!!!!')
+//       // console.log('images[i] classList is:::', images[i].classList)
+//       console.log('images[0] classList is:::', images[0].classList)
+//
+//       //toggleImageNumberOne...
+//       if ( images[0].classList[0] === "figure-image__image" ) {
+//         images[0].classList.remove("figure-image__image")
+//         images[0].classList.add("figure-image__image--zoom")
+//       }
+//       else {
+//         images[0].classList.remove("figure-image__image--zoom")
+//         images[0].classList.add("figure-image__image")
+//       }
+//     })
+//   }
+// }
+
+
+    // var button = document.getElementById("button"),
+    // paragraph = document.getElementById("paragraph");
+
+// button.addEventListener("click", function(){
+//   if (paragraph.style.display == 'none') {
+//     paragraph.style.display = 'block';
+//   } else {
+//     paragraph.style.display = 'none';
+//   }
+// }, false);
+//   }
+  //psuedo code below saying if image has this, onclick switch it with this class, otherwise give it this class...
+  // .figure-image__image ? .figure-image__image--zoom : .figure-image__image
+
+  // var className = div.getAttribute("class");
+  // if(className=="normal") {
+  //   div.className = "active";
+  // }
+  // else{
+  //   div.className = "normal";
+  // }
+//}
+// pass this to images onclick...
+// function myfunc(div) {
+//   var className = div.getAttribute("class");
+//   if(className=="normal") {
+//     div.className = "active";
+//   }
+//   else{
+//     div.className = "normal";
+//   }
+// }
+
+
 
 // componentDidMount() {
 //   window.addEventListener('scroll', this.handleScroll);
@@ -188,11 +252,21 @@ function hideChevronRight() {
 
 
 
-const TabBlock = () => (
+const TabBlock = (props) => (
+  // console.log('99999999999 -------- TabBlock props: ', this.props)
+  // console.log('99999999999 -------- TabBlock props: ', props)
 
   <div className="tab-block">
 
     <h2 className="brand--head">Tab Block</h2>
+
+    <Modal trigger={<Button>Show Modal</Button>}>
+      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Content image>
+        <Image src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' />
+        modal image here
+      </Modal.Content>
+    </Modal>
 
     <div className="blocks-tabs__wrapper">
       <FontAwesomeIcon
@@ -215,6 +289,10 @@ const TabBlock = () => (
         renderActiveOnly={false}
         onMouseEnter={() => showChevrons()}
         onMouseLeave={() => hideChevrons()}
+        // onClick={() => handleSort(column)}
+        // onClick={() => toggleImageClassName()}
+        // onClick={props.toggleTrueOrFalse}
+        onClick={props.toggleImageClassName}
       />
     </div>
 

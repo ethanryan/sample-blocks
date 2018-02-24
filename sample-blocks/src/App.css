@@ -30,6 +30,10 @@ p {
   padding-bottom: 30px;
 }
 
+.display-none {
+  display: none;
+}
+
 /* call this .hidden, same as they called it.... */
 .hidden {
   /* display: none !important; */
@@ -195,6 +199,19 @@ min-width: 30%;
   max-width: 100%;
   max-height: 38rem;
   cursor: zoom-in;
+}
+
+.figure-image__image--zoom {
+  cursor: zoom-out;
+  position: absolute;
+  transition: transform 300ms;
+  transform: translate3d(40.3438px, -178px, 0px) scale(0.596782);
+  transform-origin: center center 0px;
+  will-change: transform, top, left;
+  top: 109px;
+  left: 297.156px;
+  width: 619px;
+  height: 380px;
 }
 
 .ui.attached.segment {
