@@ -18,7 +18,7 @@ class BlocksContainer extends Component {
     console.log('0. toggleImageState - event.target.tagName is: ', event.target.tagName)
     console.log('0. toggleImageState - event.target.id is: ', event.target.id)
     var images = document.getElementsByTagName("img") //an array of our images
-    if (event.target.tagName === 'IMG') {
+    if (event.target.tagName === 'IMG') { //filtering for images getting clicked...
       console.log("image clicked!")
       // console.log('0. toggleImageState - this.state.imageZoomed: ', this.state.imageZoomed)
       var imageZoomed = this.state.imageZoomed
@@ -28,6 +28,7 @@ class BlocksContainer extends Component {
         imageZoomed: imageZoomed
       });
       var imageClicked = event.target.id
+      // console.log('imagedClicked is:', imageClicked)
       console.log('calling handleToggleImage with imageZoomed and imageClicked....')
       this.handleToggleImage(imageZoomed, imageClicked)
     }
@@ -35,16 +36,16 @@ class BlocksContainer extends Component {
 
   handleToggleImage(imageZoomed, imageClicked) {
     console.log('handleToggleImage called...')
-    var images = document.getElementsByTagName("img") //an array of our images
-    imageClicked = (imageClicked === "imgOne") ? images[0] : images[1]
-    console.log('imagedClicked is: ', imageClicked)
+    var zoomedDivOne = document.getElementById("zoomedDivOne")
+    var zoomedDivTwo = document.getElementById("zoomedDivTwo")
     if (imageZoomed === true) { //state hasn't updated yet, so getting this from function above
-      imageClicked.classList.remove("figure-image__image")
-      imageClicked.classList.add("figure-image__image--zoom")
-    }
-    else {
-      imageClicked.classList.remove("figure-image__image--zoom")
-      imageClicked.classList.add("figure-image__image")
+    console.log('removing display-none from zoomedDiv...')
+      zoomedDivOne.classList.remove("display-none")
+      zoomedDivTwo.classList.remove("display-none")
+    } else {
+      console.log('adding display-none to zoomedDiv...')
+      zoomedDivOne.classList.add("display-none")
+      zoomedDivTwo.classList.add("display-none")
     }
   }
 
