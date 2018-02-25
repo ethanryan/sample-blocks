@@ -166,20 +166,6 @@ const TabBlock = (props) => {
     chevrons[1].classList.add("hidden")
   }
 
-  // function toggleImageNumberOne() {
-  //   console.log('toggleImageNumberOne called...')
-  //   var images = document.getElementsByTagName("img") //an array of our images
-  //     if ( props.imageZoomed === true ) {
-  //       images[0].classList.remove("figure-image__image")
-  //       images[0].classList.add("figure-image__image--zoom")
-  //     }
-  //     else {
-  //       images[0].classList.remove("figure-image__image--zoom")
-  //       images[0].classList.add("figure-image__image")
-  //     }
-  // }
-//  toggleImageNumberOne()
-
 
 
   return (
@@ -187,13 +173,13 @@ const TabBlock = (props) => {
 
       <h2 className="brand--head">Tab Block</h2>
 
-      <Modal trigger={<Button>Show Modal</Button>}>
+      {/* <Modal trigger={<Button>Show Modal</Button>}>
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content image>
         <Image src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' />
         modal image here
       </Modal.Content>
-    </Modal>
+    </Modal> */}
 
     <div className="blocks-tabs__wrapper">
       <FontAwesomeIcon
@@ -216,14 +202,8 @@ const TabBlock = (props) => {
         renderActiveOnly={false}
         onMouseEnter={() => showChevrons()}
         onMouseLeave={() => hideChevrons()}
-        // onClick={() => handleSort(column)}
-        // onClick={() => toggleImageClassName()}
-        // onClick={props.toggleTrueOrFalse}
-
-        onClick={props.toggleImageClassName}
-        // onClick={props.handleClick}
+        onClick={props.toggleImageState}
         // onClick={function(e){console.log(e.target, e.currentTarget);}}
-        // onClick={props.youClicked}
       />
     </div>
 
