@@ -5,262 +5,189 @@ import * as Icons from "@fortawesome/fontawesome-free-solid"
 
 import { Tab, Image, Modal, Button } from 'semantic-ui-react'
 
-var Parser = require('html-react-parser')
+const TabBlock = (props) => {
+  console.log('99999999999 -------- TabBlock props: ', props)
 
-const jsonArray = [
-// const panes = [
-//   { menuItem: 'Embracing Discovery', render: () =>
-//   <Tab.Pane>Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.
-//     <Image
-//       tabindex="0"
-//       src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif'
-//       className="figure-image__image"
-//     />
-// </Tab.Pane>
-// },
-  { menuItem: "Embracing Discovery", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work. <br><br><Image className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' fluid />", },
-  { menuItem: "Gaining Insight", pane: "To spark creativity, feed your brain material like you're cramming for a tough test. Then stop thinking about the problem you want to solve. Go surfing or take a leisurely walk. Research shows that letting your mind wander fosters creativity. <br></br>It’s also found that meditation helps you spot and solve problems in creative ways. It promotes divergent thinking that gets novel ideas flowing. According to these studies, meditation also makes you more open to considering new solutions. Time to breathe.", },
-  { menuItem: "Making It Real", pane: "No creative process is truly complete until it manifests a tangible reality. Whether your idea is an action or a physical creation, bringing it to life will likely involve the hard work of iteration, testing, and refinement. <br><br>Just be wary of perfectionism. Push yourself to share your creations with others. By maintaining an open stance, you’ll be able to learn from their feedback. Consider their responses new material that you can draw from the next time you’re embarking on a creative endeavor.", },
-  { menuItem: "Love The Work", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work. <br><br><Image className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/kcA21C-HvSKNkEmO.png' fluid />", },
-  { menuItem: "Have Fun", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.", },
-  { menuItem: " ", pane: " ", },
-  { menuItem: " ", pane: " ??? ", },
+  var Parser = require('html-react-parser')
 
-  // { menuItem: "Tab 4", pane: "Tab 4 Content is right here mofooooo", image: "https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif" },
-]
+  const jsonArray = [
+    { menuItem: "Embracing Discovery", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work. <br><br><Image id='imgOne' className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' fluid />", },
+    { menuItem: "Gaining Insight", pane: "To spark creativity, feed your brain material like you're cramming for a tough test. Then stop thinking about the problem you want to solve. Go surfing or take a leisurely walk. Research shows that letting your mind wander fosters creativity. <br></br>It’s also found that meditation helps you spot and solve problems in creative ways. It promotes divergent thinking that gets novel ideas flowing. According to these studies, meditation also makes you more open to considering new solutions. Time to breathe.", },
+    { menuItem: "Making It Real", pane: "No creative process is truly complete until it manifests a tangible reality. Whether your idea is an action or a physical creation, bringing it to life will likely involve the hard work of iteration, testing, and refinement. <br><br>Just be wary of perfectionism. Push yourself to share your creations with others. By maintaining an open stance, you’ll be able to learn from their feedback. Consider their responses new material that you can draw from the next time you’re embarking on a creative endeavor.", },
+    { menuItem: "Love The Work", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work. <br><br><Image id='imgTwo' className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/kcA21C-HvSKNkEmO.png' fluid />", },
+    { menuItem: "Have Fun", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.", },
+    { menuItem: " ", pane: " ", },
+    { menuItem: " ", pane: " ??? ", },
+  ]
 
-
-const parsedPanes = jsonArray.map( (object, index) => {
-  // console.log('TabBlock - object is: ', index, object)
-  var newObject = Object.assign({}, object) //cloning each object into a newObject
-  // newObject.key = index
-  newObject.menuItem = object.menuItem
-  newObject.pane = Parser(object.pane) //second key value is parsed
-  newObject.id = index //giving each object an id...
-  newObject.key = index //giving each object a key...
-  ////////trying to add unique key to each child in array so i don't get warning in console...
-  // if (newObject.pane instanceof Array) {
-  //   console.log('adding keys to array of parsed object...')
-  // //   let cascadingMenu = (
-  // // <Menu>{items.map((item, key) => <MenuItem key={key}>{item}</MenuItem>)}</Menu> )
-  //   newObject.pane = (
-  //     newObject.pane.map( (object, index) => {
-  //     console.log(`------>>> returning ${object} with div key ${index}`)
-  //     // object.key = index
-  //     return <div key={index}>{object}</div>
-  //     })
-  //   )
-  // }
-  console.log('TabBlock - newObject is: ', newObject)
-  return newObject
-})
-// console.log('TabBlock - jsonArray is::::: ', jsonArray)
-console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
-
-function getMenuItems() {
-  var items = document.getElementsByClassName("item")
-  return items
-}
-
-function getChevrons() {
-  var chevrons = document.getElementsByClassName("chevron-icon")
-  return chevrons
-}
-
-function getImages() {
-  var images = document.getElementsByTagName("img")
-  return images
-}
-
-function clickedLeftChevron() {
-  // console.log('left chevron clicked...')
-  var items = getMenuItems()
-  var firstItem = items[0]
-  firstItem.scrollIntoView({behavior: "smooth"})
-  hideChevronLeft()
-}
-
-function clickedRightChevron() {
-  // console.log('right chevron clicked...')
-  var items = getMenuItems()
-  var lastItem = items[items.length - 1]
-  lastItem.scrollIntoView({behavior: "smooth"})
-  hideChevronRight()
-}
+  const parsedPanes = jsonArray.map( (object, index) => {
+    // console.log('TabBlock - object is: ', index, object)
+    var newObject = Object.assign({}, object) //cloning each object into a newObject
+    // newObject.key = index
+    newObject.menuItem = object.menuItem
+    newObject.pane = Parser(object.pane) //second key value is parsed
+    newObject.id = index //giving each object an id...
+    newObject.key = index //giving each object a key...
+    ////////trying to add unique key to each child in array so i don't get warning in console...
+    // if (newObject.pane instanceof Array) {
+    //   console.log('adding keys to array of parsed object...')
+    // //   let cascadingMenu = (
+    // // <Menu>{items.map((item, key) => <MenuItem key={key}>{item}</MenuItem>)}</Menu> )
+    //   newObject.pane = (
+    //     newObject.pane.map( (object, index) => {
+    //     console.log(`------>>> returning ${object} with div key ${index}`)
+    //     // object.key = index
+    //     return <div key={index}>{object}</div>
+    //     })
+    //   )
+    // }
+    // console.log('TabBlock - newObject is: ', newObject)
+    return newObject
+  })
+  // console.log('TabBlock - jsonArray is::::: ', jsonArray)
+  console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
 
 
-function showChevrons() { //condiitonally show chevrons, based on where the mouse is in the menu scroll...
-  console.log('check to see if we should showChevrons...')
-  var items = getMenuItems()
-  var chevrons = getChevrons()
-  //show both chevrons on mouseover of menu items...
-  for (var i = 0; i < items.length; i++) {
-    items[i].addEventListener("mouseover", function() {
-      showBothChevrons()
-    })
+
+
+
+
+
+  function getMenuItems() {
+    var items = document.getElementsByClassName("item")
+    return items
   }
-  //show chevrons when chevrons are hovered over as well...
-  for (var j = 0; j < chevrons.length; j++) {
-    chevrons[j].addEventListener("mouseover", function() {
-        showBothChevrons()
-    })
+
+  function getChevrons() {
+    var chevrons = document.getElementsByClassName("chevron-icon")
+    return chevrons
   }
-}
 
-
-function hideChevrons() {
-  console.log('no longer hovering over blocks-tabs__wrapper div, so hideChevrons called...')
-  //hideBothChevrons() //can i just call this???
-  var items = getMenuItems()
-  for (var i = 0; i < items.length; i++) {
-    items[i].addEventListener("mouseleave", function() { //mouseover or mouseleave????
-        hideBothChevrons()
-    })
+  function getImages() {
+    var images = document.getElementsByTagName("img")
+    return images
   }
-}
 
-
-function showBothChevrons() {
-  console.log('showBothChevrons called...!!!!!')
-  showChevronLeft()
-  showChevronRight()
-}
-
-function showChevronLeft() {
-  var chevrons = getChevrons()
-  var items = getMenuItems()
-  var firstItem = items[0]
-  var firstItemPosition = firstItem.getBoundingClientRect()
-  console.log('------firstItemPosition is: ', firstItemPosition)
-  console.log('firstItemPosition.x is: ', firstItemPosition.x)
-  if (firstItemPosition.x > 204) { //do this by 18% instead of pixels??? pixels will change with resizing window...
+  function clickedLeftChevron() {
+    // console.log('left chevron clicked...')
+    var items = getMenuItems()
+    var firstItem = items[0]
+    firstItem.scrollIntoView({behavior: "smooth"})
     hideChevronLeft()
-  } else {
-    chevrons[0].classList.remove("hidden")
   }
-}
 
-function showChevronRight() {
-  var chevrons = getChevrons()
-  var items = getMenuItems()
-  var lastItem = items[items.length - 1]
-  var lastItemPosition = lastItem.getBoundingClientRect()
-  console.log('lastItemPosition.x is: ', lastItemPosition.x)
-  if (lastItemPosition.x < 635) {
+  function clickedRightChevron() {
+    // console.log('right chevron clicked...')
+    var items = getMenuItems()
+    var lastItem = items[items.length - 1]
+    lastItem.scrollIntoView({behavior: "smooth"})
     hideChevronRight()
-  } else {
-    chevrons[1].classList.remove("hidden")
   }
-}
 
 
-function hideBothChevrons() {
-  console.log('hideBothChevrons called...!!!!!')
-  hideChevronLeft()
-  hideChevronRight()
-}
-
-function hideChevronLeft() {
-  var chevrons = getChevrons()
-  chevrons[0].classList.add("hidden")
-}
-
-function hideChevronRight() {
-  var chevrons = getChevrons()
-  chevrons[1].classList.add("hidden")
-}
-
-
-
-// function toggleImageClassName() {
-//   console.log('in TabBlock, props are::::', this.props)
-//   console.log('check to see if we should toggleImageClassName...')
-//   var images = getImages() //an array of our images
-//   console.log('images are: ', images)
-//   for (var i = 0; i < images.length; i++) {
-//     images[i].addEventListener('click', function() {
-//       console.log('image clicked!!!!')
-//       // console.log('images[i] classList is:::', images[i].classList)
-//       console.log('images[0] classList is:::', images[0].classList)
-//
-//       //toggleImageNumberOne...
-//       if ( images[0].classList[0] === "figure-image__image" ) {
-//         images[0].classList.remove("figure-image__image")
-//         images[0].classList.add("figure-image__image--zoom")
-//       }
-//       else {
-//         images[0].classList.remove("figure-image__image--zoom")
-//         images[0].classList.add("figure-image__image")
-//       }
-//     })
-//   }
-// }
+  function showChevrons() { //conditonally show chevrons, based on where the mouse is in the menu scroll...
+    console.log('check to see if we should showChevrons...')
+    var items = getMenuItems()
+    var chevrons = getChevrons()
+    //show both chevrons on mouseover of menu items...
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("mouseover", function() {
+        showBothChevrons()
+      })
+    }
+    //show chevrons when chevrons are hovered over as well...
+    for (var j = 0; j < chevrons.length; j++) {
+      chevrons[j].addEventListener("mouseover", function() {
+        showBothChevrons()
+      })
+    }
+  }
 
 
-    // var button = document.getElementById("button"),
-    // paragraph = document.getElementById("paragraph");
+  function hideChevrons() {
+    console.log('no longer hovering over blocks-tabs__wrapper div, so hideChevrons called...')
+    //hideBothChevrons() //can i just call this???
+    var items = getMenuItems()
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("mouseleave", function() { //mouseover or mouseleave????
+        hideBothChevrons()
+      })
+    }
+  }
 
-// button.addEventListener("click", function(){
-//   if (paragraph.style.display == 'none') {
-//     paragraph.style.display = 'block';
-//   } else {
-//     paragraph.style.display = 'none';
-//   }
-// }, false);
-//   }
-  //psuedo code below saying if image has this, onclick switch it with this class, otherwise give it this class...
-  // .figure-image__image ? .figure-image__image--zoom : .figure-image__image
 
-  // var className = div.getAttribute("class");
-  // if(className=="normal") {
-  //   div.className = "active";
+  function showBothChevrons() {
+    console.log('showBothChevrons called...!!!!!')
+    showChevronLeft()
+    showChevronRight()
+  }
+
+  function showChevronLeft() {
+    var chevrons = getChevrons()
+    var items = getMenuItems()
+    var firstItem = items[0]
+    var firstItemPosition = firstItem.getBoundingClientRect()
+    console.log('------firstItemPosition is: ', firstItemPosition)
+    console.log('firstItemPosition.x is: ', firstItemPosition.x)
+    if (firstItemPosition.x > 204) { //do this by 18% instead of pixels??? pixels will change with resizing window...
+      hideChevronLeft()
+    } else {
+      chevrons[0].classList.remove("hidden")
+    }
+  }
+
+  function showChevronRight() {
+    var chevrons = getChevrons()
+    var items = getMenuItems()
+    var lastItem = items[items.length - 1]
+    var lastItemPosition = lastItem.getBoundingClientRect()
+    console.log('lastItemPosition.x is: ', lastItemPosition.x)
+    if (lastItemPosition.x < 635) {
+      hideChevronRight()
+    } else {
+      chevrons[1].classList.remove("hidden")
+    }
+  }
+
+
+  function hideBothChevrons() {
+    console.log('hideBothChevrons called...!!!!!')
+    hideChevronLeft()
+    hideChevronRight()
+  }
+
+  function hideChevronLeft() {
+    var chevrons = getChevrons()
+    chevrons[0].classList.add("hidden")
+  }
+
+  function hideChevronRight() {
+    var chevrons = getChevrons()
+    chevrons[1].classList.add("hidden")
+  }
+
+  // function toggleImageNumberOne() {
+  //   console.log('toggleImageNumberOne called...')
+  //   var images = document.getElementsByTagName("img") //an array of our images
+  //     if ( props.imageZoomed === true ) {
+  //       images[0].classList.remove("figure-image__image")
+  //       images[0].classList.add("figure-image__image--zoom")
+  //     }
+  //     else {
+  //       images[0].classList.remove("figure-image__image--zoom")
+  //       images[0].classList.add("figure-image__image")
+  //     }
   // }
-  // else{
-  //   div.className = "normal";
-  // }
-//}
-// pass this to images onclick...
-// function myfunc(div) {
-//   var className = div.getAttribute("class");
-//   if(className=="normal") {
-//     div.className = "active";
-//   }
-//   else{
-//     div.className = "normal";
-//   }
-// }
+//  toggleImageNumberOne()
 
 
 
-// componentDidMount() {
-//   window.addEventListener('scroll', this.handleScroll);
-// }
+  return (
+    <div className="tab-block">
 
-// function handleScroll() {
-//   // var el = document.getElementById('story_body');
-//   var menu = document.getElementsByClassName('menu');
-//   console.log('menu is::', menu)
-//
-//   var minPixel = menu.offsetTop;
-//   var maxPixel = minPixel + menu.scrollHeight;
-//   var value = document.body.scrollTop;
-//
-//   // respect bounds of element
-//   var percent = (value - minPixel)/(maxPixel - minPixel);
-//   percent = Math.min(1,Math.max(percent, 0))*100;
-// }
+      <h2 className="brand--head">Tab Block</h2>
 
-
-
-const TabBlock = (props) => (
-  // console.log('99999999999 -------- TabBlock props: ', this.props)
-  // console.log('99999999999 -------- TabBlock props: ', props)
-
-  <div className="tab-block">
-
-    <h2 className="brand--head">Tab Block</h2>
-
-    <Modal trigger={<Button>Show Modal</Button>}>
+      <Modal trigger={<Button>Show Modal</Button>}>
       <Modal.Header>Select a Photo</Modal.Header>
       <Modal.Content image>
         <Image src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' />
@@ -292,11 +219,16 @@ const TabBlock = (props) => (
         // onClick={() => handleSort(column)}
         // onClick={() => toggleImageClassName()}
         // onClick={props.toggleTrueOrFalse}
+
         onClick={props.toggleImageClassName}
+        // onClick={props.handleClick}
+        // onClick={function(e){console.log(e.target, e.currentTarget);}}
+        // onClick={props.youClicked}
       />
     </div>
 
   </div>
 )
+}
 
 export default TabBlock
