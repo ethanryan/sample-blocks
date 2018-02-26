@@ -18,84 +18,7 @@ body {
 }
 
 .App {
-  /* box-sizing: border-box;
-  color: rgb(49, 53, 55);
-  display: block;
-  font-family: Merriweather;
-  font-size: 22.4px;
-  height: 908.844px;
-  line-height: 33.6px;
-  text-size-adjust: 100%;
-  width: 1381px; */
-}
-
-.text-style {
-  color: rgb(49, 53, 55);
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  font-stretch: 100%;
-  font-weight: 300;
-  line-height: 24px;
-  color: rgb(49, 53, 55);
   /* display: block; */
-  word-break: break-word;
-  word-wrap: break-word;
-}
-
-p {
-  /* display: block;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  border-bottom-color: rgb(49, 53, 55);
-  border-bottom-style: none;
-  border-bottom-width: 0px;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  border-left-color: rgb(49, 53, 55);
-  border-left-style: none;
-  border-left-width: 0px;
-  border-right-color: rgb(49, 53, 55);
-  border-right-style: none;
-  border-right-width: 0px;
-  border-top-color: rgb(49, 53, 55);
-  border-top-style: none;
-  border-top-width: 0px;
-  box-sizing: border-box;
-  color: rgb(49, 53, 55);
-  display: block;
-  font-family: Merriweather;
-  font-size: 16px;
-  font-stretch: 100%;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-variant-east-asian: normal;
-  font-variant-ligatures: normal;
-  font-variant-numeric: normal;
-  font-weight: 300;
-  height: 72px;
-  line-height: 24px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 0px;
-  vertical-align: baseline;
-  width: 699.656px;
-  word-break: break-word;
-  word-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  -webkit-margin-after: 0px;
-  -webkit-margin-before: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-margin-start: 0px; */
 }
 
 .center {
@@ -103,15 +26,17 @@ p {
 }
 
 .brand--head {
-  font-family: Lato !important;
-  font-size: 32px;
-  font-stretch: 100%;
   color: rgb(49, 53, 55);
   box-sizing: border-box;
   display: block;
+  font-family: Lato !important;
+  font-size: 32px;
+  font-stretch: 100%;
   font-style: normal;
   font-weight: 700;
   line-height: 40px;
+  padding-top: 12px;
+  padding-bottom: 20px;
   vertical-align: baseline;
 }
 
@@ -129,7 +54,7 @@ p {
 
 .tab-block {
   /* opacity: .99; */
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   margin-left: 13.5%;
   margin-right: 13.5%;
   margin-bottom: 13.5%;
@@ -154,6 +79,7 @@ p {
 
 /* styling text */
 .ui.bottom.attached.segment.active.tab {
+  /* border: 3px solid green; */
   color: rgb(49, 53, 55);
   display: block;
   font-family: Merriweather !important;
@@ -170,9 +96,9 @@ p {
 
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
-  /* border-bottom: 1px solid white; */
+  border-bottom: 1px solid white;
   /* border-bottom: 3px solid green; */
-  border: 1px solid yellow;
+  /* border: 3px solid yellow; */
   position: relative;
   /* Make this scrollable when needed */
   overflow-x: auto;
@@ -213,13 +139,16 @@ p {
   font-variant-east-asian: normal;
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
-  font-weight: 400;
+  font-weight: 700 !important;
   height: 80px;
   line-height: 24px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: -1px;
   margin-top: 0px;
+  /* min-width: 23%; */
+  min-width: 40%;
+  /* note: min-width becomes 30% on tablet size, and 40% on mobile... <<<<<<--------------------- */
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 0px;
@@ -227,7 +156,6 @@ p {
   padding-right: 0px;
   padding-top: 0px;
   vertical-align: baseline;
-  width: 760.656px;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-font-smoothing: antialiased;
@@ -290,7 +218,7 @@ min-width: 30%;
 
 /* .blocks-tabs__header-item { */
 .ui.menu .item {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   background-attachment: scroll;
   background-clip: border-box;
   background-color: rgb(245, 245, 245);
@@ -299,7 +227,7 @@ min-width: 30%;
   background-position-x: 0%;
   background-position-y: 0%;
   background-size: auto;
-  border-bottom-color: rgba(0, 0, 0, 0);
+  /* border-bottom-color: rgba(0, 0, 0, 0);
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-image-outset: 0px;
@@ -315,7 +243,7 @@ min-width: 30%;
   border-right-width: 1px;
   border-top-color: rgb(116, 122, 126);
   border-top-style: none;
-  border-top-width: 0px;
+  border-top-width: 0px; */
   box-sizing: border-box;
   color: rgb(116, 122, 126);
   cursor: default;
@@ -343,6 +271,8 @@ min-width: 30%;
   line-height: 20px;
   margin: 0px;
   min-width: 23%;
+  /* min-width: 40%; */
+  /* note: min-width becomes 30% on tablet size, and 40% on mobile... <<<<<<--------------------- */
   outline-offset: 0px;
   padding-bottom: 10px;
   padding-left: 20px;
@@ -367,13 +297,62 @@ min-width: 30%;
   -webkit-font-smoothing: antialiased;
 }
 
+/* sizing a directly to style menu items  */
+a {
+  /* white-space: normal; */
+  white-space: pre-wrap;
+  /* padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px; */
+  /* word-break: break-word; */
+  word-wrap: normal;
+  min-width: 23%;
+  /* min-width: 40%; */
+  /* note: min-width becomes 30% on tablet size, and 40% on mobile... <<<<<<--------------------- */
+}
 /* .blocks-tabs__header-item--active { */
 .ui.menu .active.item {
   background: #fff!important;
-  /* background: green; */
+  /* background-color: green; */
   background-color: rgb(255, 255, 255);
+  color: rgb(116, 122, 126);
   border-bottom: 1px solid white;
   cursor: default!important;
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  font-stretch: 100%;
+  font-weight: 700;
+  height: 80px;
+  justify-content: center;
+  letter-spacing: 1.44px;
+  line-height: 20px;
+  min-width: 23%;
+  /* note: min-width becomes 30% on tablet size, and 40% on mobile... <<<<<<--------------------- */
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  /* note: padding left and right become 5px on mobile... <<<<<<--------------------- */
+  text-align: center;
+text-decoration-color: rgb(116, 122, 126);
+text-decoration-line: none;
+text-decoration-style: solid;
+text-overflow: ellipsis;
+text-transform: uppercase;
+transition-delay: 0s, 0s;
+transition-duration: 0.3s, 0.3s;
+transition-property: background, border;
+transition-timing-function: ease, ease;
+vertical-align: baseline;
+/* word-break: break-word; */
+word-wrap: break-word;
+-webkit-box-align: center;
+-webkit-box-flex: 0;
+-webkit-box-pack: center;
+-webkit-font-smoothing: antialiased;
 }
 
 .ui.segment {
@@ -439,3 +418,78 @@ background-color: black;
 color: orange;
 background-color: black;
 } */
+
+
+
+
+
+
+/* tablet screens */
+@media (max-width:840px) {
+
+  .App {
+    background-color: yellow;
+  }
+
+  .tab-block {
+    /* border: 1px solid blue; */
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-bottom: 3.5%;
+  }
+
+  .chevron-icon__right {
+    right: 3.5%; /* 13.5% is the margin-right of .tab-block */
+  }
+
+
+}
+
+@media (max-width:720px) {
+
+  .App {
+    background-color: red;
+  }
+
+  a {
+    min-width: 30%;
+  }
+
+  .ui.menu .item {
+    min-width: 30%;
+  }
+
+  .ui.menu .active.item {
+    min-width: 30%;
+  }
+
+}
+
+
+
+
+
+/* mobile screens  */
+@media (max-width:480px) {
+
+  .App {
+    background-color: blue;
+  }
+
+  a {
+    min-width: 40%;
+  }
+
+  .ui.menu .item {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 40%;
+  }
+
+  .ui.menu .active.item {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 40%;
+  }
+
+}

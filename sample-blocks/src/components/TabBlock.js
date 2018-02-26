@@ -192,6 +192,10 @@ const TabBlock = (props) => {
             onMouseEnter={() => showChevrons()}
             onMouseLeave={() => hideChevrons()}
             onClick={props.toggleImageState}
+            style={{
+              whiteSpace: "normal",
+              wordWrap: "break-word"
+            }}
             // onClick={function(e){console.log(e.target, e.currentTarget);}}
           />
         </div>
