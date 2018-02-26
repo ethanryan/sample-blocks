@@ -17,7 +17,6 @@ class BlocksContainer extends Component {
     // console.log('0. toggleImageState - event.target is: ', event.target)
     console.log('0. toggleImageState - event.target.tagName is: ', event.target.tagName)
     console.log('0. toggleImageState - event.target.id is: ', event.target.id)
-    var images = document.getElementsByTagName("img") //an array of our images
     if (event.target.tagName === 'IMG') { //filtering for images getting clicked...
       console.log("image clicked!")
       // console.log('0. toggleImageState - this.state.imageZoomed: ', this.state.imageZoomed)
