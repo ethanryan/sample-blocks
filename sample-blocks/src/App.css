@@ -1,11 +1,20 @@
 /* TabBlock */
 
 body {
-  margin: 0;
-  line-height: 1.5;
-  font-family: lato,sans-serif;
-  font-size: 1.6em;
-  color: #313537;
+  /* margin: 0; */
+  /* line-height: 1.5; */
+  /* color: #313537; */
+  color: rgb(49, 53, 55);
+  font-family: Lato, sans-serif;
+  /* font-size: 1.6em; */
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  /* display: block; */
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 .App {
@@ -18,6 +27,19 @@ body {
   line-height: 33.6px;
   text-size-adjust: 100%;
   width: 1381px; */
+}
+
+.text-style {
+  color: rgb(49, 53, 55);
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-stretch: 100%;
+  font-weight: 300;
+  line-height: 24px;
+  color: rgb(49, 53, 55);
+  /* display: block; */
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 p {
@@ -82,8 +104,6 @@ p {
 
 .brand--head {
   font-family: Lato !important;
-  padding-top: 30px;
-  padding-bottom: 30px;
   font-size: 32px;
   font-stretch: 100%;
   color: rgb(49, 53, 55);
@@ -92,6 +112,7 @@ p {
   font-style: normal;
   font-weight: 700;
   line-height: 40px;
+  vertical-align: baseline;
 }
 
 .display-none {
@@ -115,6 +136,12 @@ p {
 }
 
 
+.blocks-tabs {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
 .blocks-tabs__wrapper {
   border: 1px solid #ddd;
   /* border: 1px solid red; */
@@ -125,7 +152,21 @@ p {
   box-shadow: 0 0.4rem 1.2rem 0.2rem rgba(0,0,0,.05);
 }
 
-
+/* styling text */
+.ui.bottom.attached.segment.active.tab {
+  color: rgb(49, 53, 55);
+  display: block;
+  font-family: Merriweather !important;
+  /* font-family:  Lato, sans-serif; */
+  font-size: 16px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  word-break: break-word;
+  word-wrap: break-word;
+  webkit-font-smoothing: antialiased;
+}
 
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
@@ -164,7 +205,7 @@ p {
   color: rgb(49, 53, 55);
   display: flex;
   flex-wrap: nowrap;
-  font-family: lato, sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 16px;
   font-stretch: 100%;
   font-style: normal;
