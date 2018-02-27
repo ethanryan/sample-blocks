@@ -4,13 +4,12 @@ import FontAwesomeIcon from "@fortawesome/react-fontawesome"
 import * as Icons from "@fortawesome/fontawesome-free-solid"
 
 import { Tab } from 'semantic-ui-react'
+var Parser = require('html-react-parser')
+require('typeface-merriweather')
+
 
 const TabBlock = (props) => {
-  console.log('TabBlock props: ', props)
-
-  var Parser = require('html-react-parser')
-  require('typeface-merriweather')
-
+  // console.log('TabBlock props: ', props)
 
   const jsonArray = [
     { menuItem: "Embracing Discovery", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.<br><br><Image id='imgOne' className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' fluid /><div id='zoomedDivOne' class='display-none' style='position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 999;'> <div style='position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 300ms;'></div><img id='imgZoomOne' class='figure-image__image--zoom' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/q0r7xIVMCo4RkD5A.gif' style='cursor: zoom-out; position: absolute; transition: transform 300ms; transform: translate3d(40.3438px, -329px, 0px) scale(1.09492); transform-origin: center center 0px; will-change: transform, top, left; top: 361px; left: 252.156px; width: 619px; height: 380px;'></div>", },
@@ -19,7 +18,6 @@ const TabBlock = (props) => {
     { menuItem: "Love The Work", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.<br><br><Image id='imgTwo' className='figure-image__image' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/kcA21C-HvSKNkEmO.png' fluid /><div id='zoomedDivTwo' class='display-none' style='position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 999;'><div style='position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 1; transition: opacity 300ms;'></div><img id='imgZoomTwo' class='figure-image__image--zoom' src='https://cdn.articulate.com/rise/courses/_Af0P0L1E-1akg7PhqRPNyg0uRFD0pUp/kcA21C-HvSKNkEmO.png' style='cursor: zoom-out; position: absolute; transition: transform 300ms; transform: translate3d(159.844px, -236px, 0px) scale(1.04653); transform-origin: center center 0px; will-change: transform, top, left; top: 263px; left: 248.156px; width: 380px; height: 380px;'>", },
     { menuItem: "Have Fun", pane: "Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.", },
     { menuItem: " ", pane: " ", },
-    // { menuItem: " ", pane: " ??? ", },
   ]
 
 
@@ -36,7 +34,7 @@ const TabBlock = (props) => {
     return newObject
   })
   // console.log('TabBlock - jsonArray is::::: ', jsonArray)
-  console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
+  // console.log('0. TabBlock - parsedPanes is::::: ', parsedPanes)
 
 
   function getMenuItems() {
@@ -67,7 +65,7 @@ const TabBlock = (props) => {
 
 
   function showChevrons() { //conditonally show chevrons, based on where the mouse is in the menu scroll...
-    console.log('check to see if we should showChevrons...')
+    // console.log('check to see if we should showChevrons...')
     var items = getMenuItems()
     var chevrons = getChevrons()
     //show both chevrons on mouseover of menu items...
@@ -97,9 +95,9 @@ const TabBlock = (props) => {
 
 
   function showBothChevrons() {
-    console.log('showBothChevrons called...!!!!!')
+    // console.log('showBothChevrons called...!!!!!')
     var mySVG = document.getElementsByClassName('chevron-icon');
-    console.log('mySVG is: ', mySVG)
+    // console.log('mySVG is: ', mySVG)
     mySVG[0].setAttribute("viewBox", "0 0 500 512");
     mySVG[1].setAttribute("viewBox", "0 0 500 512");
     //viewBox, min-x min-y width height
@@ -113,12 +111,11 @@ const TabBlock = (props) => {
     var firstItem = items[0]
     var firstItemPosition = firstItem.getBoundingClientRect()
     // console.log('firstItemPosition is: ', firstItemPosition)
-    console.log('00. firstItemPosition.x is: ', firstItemPosition.x)
+    // console.log('00. firstItemPosition.x is: ', firstItemPosition.x)
     var windowWidth = window.innerWidth
-    console.log('11. windowWidth is: ', windowWidth)
+    // console.log('11. windowWidth is: ', windowWidth)
     var leftSide = windowWidth * .135
-    console.log('22. leftSide is: ', leftSide)
-    // if (firstItemPosition.x > 204) { //do this by 18% instead of pixels??? pixels will change with resizing window...
+    // console.log('22. leftSide is: ', leftSide)
     if (firstItemPosition.x > leftSide) {
       hideChevronLeft()
     } else {
@@ -141,7 +138,7 @@ const TabBlock = (props) => {
     var windowWidth = window.innerWidth
     // console.log('1. windowWidth is: ', windowWidth)
     var rightSide = windowWidth - (windowWidth * .13)
-    console.log('2. rightSide is: ', rightSide)
+    // console.log('2. rightSide is: ', rightSide)
     if (limit < rightSide) {
       hideChevronRight()
     } else {
@@ -151,7 +148,7 @@ const TabBlock = (props) => {
 
 
   function hideBothChevrons() {
-    console.log('hideBothChevrons called...!!!!!')
+    // console.log('hideBothChevrons called...!!!!!')
     hideChevronLeft()
     hideChevronRight()
   }
