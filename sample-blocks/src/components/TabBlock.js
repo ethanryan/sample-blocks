@@ -130,15 +130,19 @@ const TabBlock = (props) => {
     var chevrons = getChevrons()
     var items = getMenuItems()
     var lastItem = items[items.length - 1]
+    var widthOfItems = items[items.length]
+    // console.log('0. widthOfItems is: ', widthOfItems)
     var lastItemPosition = lastItem.getBoundingClientRect()
-    console.log('0. lastItemPosition.x is: ', lastItemPosition.x)
+    // console.log('0. lastItemPosition is: ', lastItemPosition)
+    // console.log('0. lastItemPosition.x is: ', lastItemPosition.x)
+    // console.log('0. lastItemPosition.width is: ', lastItemPosition.width)
+    var limit = lastItemPosition.width + lastItemPosition.x
+    // console.log('0. limit (x + width) is: ', limit)
     var windowWidth = window.innerWidth
-    console.log('1. windowWidth is: ', windowWidth)
+    // console.log('1. windowWidth is: ', windowWidth)
     var rightSide = windowWidth - (windowWidth * .13)
-    //this number is off, fix this...................... <<<<---------------!!!!
     console.log('2. rightSide is: ', rightSide)
-    // if (lastItemPosition.x < 635) {
-    if (lastItemPosition.x < rightSide) {
+    if (limit < rightSide) {
       hideChevronRight()
     } else {
       chevrons[1].classList.remove("hidden")

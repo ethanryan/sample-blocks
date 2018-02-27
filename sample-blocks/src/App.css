@@ -157,6 +157,13 @@
   right: 13.5%; /* 13.5% is the margin-right of .tab-block */
 }
 
+/* sizing anchor tags directly to style menu items  */
+a {
+  white-space: normal;
+  /* white-space: pre-wrap; */
+  word-wrap: normal;
+  min-width: 23%; /* note: min-width becomes 30% on tablet, and 40% on mobile... */
+}
 
 /* .blocks-tabs__header-item { */
 .ui.menu .item {
@@ -303,14 +310,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* sizing anchor tags directly to style menu items  */
-a {
-  white-space: normal;
-  /* white-space: pre-wrap; */
-  word-wrap: normal;
-  min-width: 23%; /* note: min-width becomes 30% on tablet, and 40% on mobile... */
-}
-
 /* .blocks-tabs__header-item--active { */
 .ui.menu .active.item {
   background: #fff!important;
@@ -345,7 +344,7 @@ a {
   transition-property: background, border;
   transition-timing-function: ease, ease;
   vertical-align: baseline;
-  /* word-break: break-word; */
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-box-align: center;
   -webkit-box-flex: 0;
@@ -392,37 +391,6 @@ a {
 .ui.attached.segment {
   border-bottom: none;
 }
-
-
-
-/* div.ui.attached.menu:not(.tabular):hover {
-color: orange;
-background-color: black!important;
-}
-
-#abc {
-color: orange!important;
-background-color: black!important;
-}
-
-.xxx {
-color: orange!important;
-background-color: black!important;
-}
-
-.tab-block:hover {
-color: orange;
-background-color: black;
-}
-
-.segment:hover {
-color: orange;
-background-color: black;
-} */
-
-
-
-
 
 
 /* tablet screens */
