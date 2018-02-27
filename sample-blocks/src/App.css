@@ -396,7 +396,7 @@ a {
 /* tablet screens */
 @media (max-width:840px) {
   .App {
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 
   .tab-block {
@@ -413,7 +413,7 @@ a {
 
 @media (max-width:720px) {
   .App {
-    background-color: red;
+    /* background-color: red; */
   }
 
   a {
@@ -437,7 +437,7 @@ a {
 @media (max-width:480px) {
 
   .App {
-    background-color: blue;
+    /* background-color: blue; */
   }
 
   a {
