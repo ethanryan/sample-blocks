@@ -127,8 +127,6 @@ const TabBlock = (props) => {
     var chevrons = getChevrons()
     var items = getMenuItems()
     var lastItem = items[items.length - 1]
-    var widthOfItems = items[items.length]
-    // console.log('0. widthOfItems is: ', widthOfItems)
     var lastItemPosition = lastItem.getBoundingClientRect()
     // console.log('0. lastItemPosition is: ', lastItemPosition)
     // console.log('0. lastItemPosition.x is: ', lastItemPosition.x)
