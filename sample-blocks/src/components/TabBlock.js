@@ -6,7 +6,7 @@ import * as Icons from "@fortawesome/fontawesome-free-solid"
 import { Tab } from 'semantic-ui-react'
 
 const TabBlock = (props) => {
-  console.log('99999999999 -------- TabBlock props: ', props)
+  console.log('TabBlock props: ', props)
 
   var Parser = require('html-react-parser')
   require('typeface-merriweather')
@@ -175,14 +175,14 @@ const TabBlock = (props) => {
             icon={Icons.faChevronLeft}
             onClick={() => clickedLeftChevron()}
             className="chevron-icon hidden"
-            size="4x"
+            // size="4x"
           />
 
           <FontAwesomeIcon
             icon={Icons.faChevronRight}
             onClick={() => clickedRightChevron()}
             className="chevron-icon hidden chevron-icon__right"
-            size="4x"
+            size={8}
           />
 
           <Tab
