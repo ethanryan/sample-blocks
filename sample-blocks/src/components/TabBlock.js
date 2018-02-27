@@ -103,6 +103,12 @@ const TabBlock = (props) => {
 
   function showBothChevrons() {
     console.log('showBothChevrons called...!!!!!')
+    var mySVG = document.getElementsByClassName('chevron-icon');
+    console.log('mySVG is: ', mySVG)
+    // mySVG[0].setAttribute("viewBox", "0 0 1000 1000");
+    mySVG[0].setAttribute("viewBox", "0 0 500 512");
+    mySVG[1].setAttribute("viewBox", "0 0 500 512");
+    //viewBox, min-x min-y width height
     showChevronLeft()
     showChevronRight()
   }
@@ -164,6 +170,8 @@ const TabBlock = (props) => {
 
 
 
+
+
   return (
     <div className="tab-block">
 
@@ -182,7 +190,7 @@ const TabBlock = (props) => {
             icon={Icons.faChevronRight}
             onClick={() => clickedRightChevron()}
             className="chevron-icon hidden chevron-icon__right"
-            size={8}
+            // size={8}
           />
 
           <Tab
@@ -192,10 +200,6 @@ const TabBlock = (props) => {
             onMouseEnter={() => showChevrons()}
             onMouseLeave={() => hideChevrons()}
             onClick={props.toggleImageState}
-            style={{
-              whiteSpace: "normal",
-              wordWrap: "break-word"
-            }}
             // onClick={function(e){console.log(e.target, e.currentTarget);}}
           />
         </div>

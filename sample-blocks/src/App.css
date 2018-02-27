@@ -241,7 +241,7 @@ min-width: 44px;
 opacity: 0;
 padding: inherit;
 padding-bottom: 10px;
-padding-left: 10px;
+padding-left: 18px; /* this is for resized viewBox in javascript */
 padding-right: 10px;
 padding-top: 10px;
 position: absolute;
@@ -272,6 +272,7 @@ z-index: 1;
 
 .chevron-icon__right {
   right: 13.5%; /* 13.5% is the margin-right of .tab-block */
+  /* max-width: 25px; */
 }
 
 
