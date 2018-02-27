@@ -177,14 +177,12 @@ const TabBlock = (props) => {
             icon={Icons.faChevronLeft}
             onClick={() => clickedLeftChevron()}
             className="chevron-icon hidden"
-            // size="4x"
           />
 
           <FontAwesomeIcon
             icon={Icons.faChevronRight}
             onClick={() => clickedRightChevron()}
             className="chevron-icon hidden chevron-icon__right"
-            // size={8}
           />
 
           <Tab

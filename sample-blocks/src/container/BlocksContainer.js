@@ -6,7 +6,6 @@ class BlocksContainer extends Component {
   constructor() {
     super()
     this.state = {
-      test: 'hello',
       imageZoomed: false,
     }
     this.toggleImageState = this.toggleImageState.bind(this)
