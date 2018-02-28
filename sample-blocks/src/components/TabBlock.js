@@ -99,7 +99,8 @@ const TabBlock = (props) => {
     var mySVG = document.getElementsByClassName('chevron-icon');
     // console.log('mySVG is: ', mySVG)
     mySVG[0].setAttribute("viewBox", "0 0 500 512");
-    mySVG[1].setAttribute("viewBox", "0 0 500 512");
+    // mySVG[1].setAttribute("viewBox", "0 0 500 512");
+    mySVG[1].setAttribute("viewBox", "0 0 300 512");
     //viewBox, min-x min-y width height
     showChevronLeft()
     showChevronRight()

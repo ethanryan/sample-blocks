@@ -77,14 +77,14 @@
 
 /* delete this soon, replace with below */
 .chevron-icon {
-  /* border: 3px solid orange; */
+  border: 3px solid orange;
   background-color: rgb(116, 122, 126);
   background-image: none;
   background-origin: padding-box;
   background-position-x: 0%;
   background-position-y: 0%;
   background-size: auto;
-  border-bottom-color: rgb(255, 255, 255);
+  /* border-bottom-color: rgb(255, 255, 255);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-style: none;
@@ -104,7 +104,7 @@
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-top-style: none;
-  border-top-width: 0px;
+  border-top-width: 0px; */
   box-sizing: border-box;
   color: rgb(255, 255, 255);
   cursor: pointer;
@@ -129,8 +129,8 @@
   opacity: 0;
   padding: inherit;
   padding-bottom: 10px;
-  padding-left: 18px; /* this is for resized viewBox in javascript */
-  padding-right: 10px;
+  padding-left: 14px; /* this is for resized viewBox in javascript */
+  padding-right: 14px;
   padding-top: 10px;
   position: absolute;
   transition-delay: 0s;
