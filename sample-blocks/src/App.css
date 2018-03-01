@@ -156,9 +156,6 @@
 .chevron-icon__right {
   right: 13.5%; /* 13.5% is the margin-right of .tab-block */
 }
-/* add this gradient to right side of items except for last item... reverse and do same for left side */
-/* background: linear-gradient(to right, rgb(245, 245, 245), transparent); */
-
 
 /* sizing anchor tags directly to style menu items  */
 a {
@@ -246,6 +243,13 @@ a {
 /* .blocks-tabs__header-item:hover { */
 .item:hover {
     background: #efefef !important;
+}
+
+/* add this gradient to right side of items except for last item... reverse and do same for left side */
+/* background: linear-gradient(to right, rgb(245, 245, 245), transparent); */
+.gradient-right {
+  /* background: linear-gradient(to right, rgb(245, 245, 245), transparent); */
+  background: linear-gradient(to right, rgb(245, 245, 245), pink) !important;
 }
 
 /* active tab has a white bottom border */

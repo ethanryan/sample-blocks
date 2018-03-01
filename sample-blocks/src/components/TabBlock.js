@@ -94,6 +94,36 @@ const TabBlock = (props) => {
   }
 
 
+  // working on this
+  // working on this
+  // working on this
+  // working on this
+  // function styleItemGradients() {
+  //   console.log('styleItemGradients called !!!!!!!')
+  //   var anchors = document.getElementsByTagName('a')
+  //   console.log('anchors is: ', anchors)
+  //   var rightAnchor = anchors[anchors.length - 1]
+  //   console.log('rightAnchor is: ', rightAnchor)
+  //
+  //   var items = getMenuItems()
+  //   var lastItem = items[items.length - 1]
+  //   var lastItemPosition = lastItem.getBoundingClientRect()
+  //   console.log('lastItemPosition is: ', lastItemPosition)
+  //
+  //   var rightLimit = lastItemPosition.width + lastItemPosition.x
+  //   console.log('rightLimit is: ', rightLimit)
+  //   var windowWidth = window.innerWidth
+  //   var rightSide = windowWidth - (windowWidth * .13)
+  //
+  //   for (var i = 0; i < anchors.length; i++) {
+  //     if (rightLimit < rightSide) {
+  //       anchors[i].classList.remove('gradient-right')
+  //     } else {
+  //       anchors[i].classList.add('gradient-right')
+  //     }
+  //   }
+  // }
+
   function showBothChevrons() {
     // console.log('showBothChevrons called...!!!!!')
     var mySVG = document.getElementsByClassName('chevron-icon');
@@ -167,38 +197,40 @@ const TabBlock = (props) => {
 
 
   return (
-    <div className="tab-block">
+    <div className="tab-block"
+      // onMouseEnter={() => styleItemGradients()}
+      >
 
-      <h2 className="brand--head">Tab Block</h2>
+        <h2 className="brand--head">Tab Block</h2>
 
-      <div className="blocks-tabs">
-        <div className="blocks-tabs__wrapper">
-          <FontAwesomeIcon
-            icon={Icons.faChevronLeft}
-            onClick={() => clickedLeftChevron()}
-            className="chevron-icon hidden"
-          />
+        <div className="blocks-tabs">
+          <div className="blocks-tabs__wrapper">
+            <FontAwesomeIcon
+              icon={Icons.faChevronLeft}
+              onClick={() => clickedLeftChevron()}
+              className="chevron-icon hidden"
+            />
 
-          <FontAwesomeIcon
-            icon={Icons.faChevronRight}
-            onClick={() => clickedRightChevron()}
-            className="chevron-icon hidden chevron-icon__right"
-          />
+            <FontAwesomeIcon
+              icon={Icons.faChevronRight}
+              onClick={() => clickedRightChevron()}
+              className="chevron-icon hidden chevron-icon__right"
+            />
 
-          <Tab
-            menu={{attached: true, tabular: false}}
-            panes={parsedPanes}
-            renderActiveOnly={false}
-            onMouseEnter={() => showChevrons()}
-            onMouseLeave={() => hideChevrons()}
-            onClick={props.toggleImageState}
-            // onClick={function(e){console.log(e.target, e.currentTarget);}}
-          />
+            <Tab
+              menu={{attached: true, tabular: false}}
+              panes={parsedPanes}
+              renderActiveOnly={false}
+              onMouseEnter={() => showChevrons()}
+              onMouseLeave={() => hideChevrons()}
+              onClick={props.toggleImageState}
+              // onClick={function(e){console.log(e.target, e.currentTarget);}}
+            />
+          </div>
         </div>
+
       </div>
+    )
+  }
 
-    </div>
-  )
-}
-
-export default TabBlock
+  export default TabBlock
