@@ -25,7 +25,6 @@ class BlocksContainer extends Component {
   }
 
   toggleImageState(event) {
-    // console.log('0. toggleImageState called...')
     // console.log('0. toggleImageState - event.target is: ', event.target)
     // console.log('0. toggleImageState - event.target.tagName is: ', event.target.tagName)
     // console.log('0. toggleImageState - event.target.id is: ', event.target.id)

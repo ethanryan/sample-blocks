@@ -252,6 +252,11 @@ a {
   background: linear-gradient(to right, rgb(245, 245, 245), pink) !important;
 }
 
+.gradient-left {
+  /* background: linear-gradient(to left, rgb(245, 245, 245), transparent); */
+  background: linear-gradient(to left, rgb(245, 245, 245), pink) !important;
+}
+
 /* active tab has a white bottom border */
 .ui.attached.menu:not(.tabular) {
   /* border-bottom: 1px solid white; */

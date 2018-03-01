@@ -9,7 +9,7 @@ require('typeface-merriweather')
 
 
 const TabBlock = (props) => {
-  console.log('--------TabBlock props: ', props)
+  // console.log('--------TabBlock props: ', props)
 
   // const parsedPanes = jsonArray.map( (object, index) => { //moved jsonArray to container...
   const parsedPanes = props.jsonArray().map( (object, index) => {
@@ -53,7 +53,6 @@ const TabBlock = (props) => {
     hideChevronRight()
   }
 
-
   function showChevrons() { //conditonally show chevrons, based on where the mouse is in the menu scroll...
     // console.log('check to see if we should showChevrons...')
     var items = getMenuItems()
@@ -72,7 +71,6 @@ const TabBlock = (props) => {
     }
   }
 
-
   function hideChevrons() {
     // console.log('no longer hovering over blocks-tabs__wrapper div, so hideChevrons called...')
     var items = getMenuItems()
@@ -82,7 +80,6 @@ const TabBlock = (props) => {
       })
     }
   }
-
 
   function showBothChevrons() {
     // console.log('showBothChevrons called...!!!!!')
@@ -101,7 +98,6 @@ const TabBlock = (props) => {
     var items = getMenuItems()
     var firstItem = items[0]
     var firstItemPosition = firstItem.getBoundingClientRect()
-    // console.log('firstItemPosition is: ', firstItemPosition)
     // console.log('00. firstItemPosition.x is: ', firstItemPosition.x)
     var windowWidth = window.innerWidth
     // console.log('11. windowWidth is: ', windowWidth)
@@ -119,7 +115,6 @@ const TabBlock = (props) => {
     var items = getMenuItems()
     var lastItem = items[items.length - 1]
     var lastItemPosition = lastItem.getBoundingClientRect()
-    // console.log('0. lastItemPosition is: ', lastItemPosition)
     // console.log('0. lastItemPosition.x is: ', lastItemPosition.x)
     // console.log('0. lastItemPosition.width is: ', lastItemPosition.width)
     var limit = lastItemPosition.width + lastItemPosition.x
@@ -134,7 +129,6 @@ const TabBlock = (props) => {
       chevrons[1].classList.remove("hidden")
     }
   }
-
 
   function hideBothChevrons() {
     // console.log('hideBothChevrons called...!!!!!')
